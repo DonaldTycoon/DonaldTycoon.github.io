@@ -77,8 +77,8 @@ function toHTML(info){
     save += '<div id="ID">'
     save +=     u_id;
     save += '</div>'
-    levelFromExp(info.data.skills.physical.strength);
-    hasCooldown(info.data.licenses.corp_cooldown);
+    //levelFromExp(info.data.skills.physical.strength);
+    //hasCooldown(info.data.licenses.corp_cooldown);
 
     document.getElementById('data').innerHTML = save;
 }
