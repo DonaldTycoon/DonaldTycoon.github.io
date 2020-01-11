@@ -17,15 +17,15 @@
         height:20px;
         transition:width 150ms;
 }
-.bar_hunger{
+#bar_hunger{
         .bar;
         background-color:#00ff00;
 }
-.bar_health{
+#bar_health{
         .bar;
         background-color:#00ff00;
 }
-.bar_thirst{
+#bar_thirst{
         .bar;
         background-color:#00ff00;
 }
@@ -34,15 +34,15 @@
         display:inline-block;
         top:3px;
 }
-.percent_hunger{
+#percent_hunger{
         .percent;
         left:0%;
 }
-.percent_health{
+#percent_health{
         .percent;
         left:0%;
 }
-.percent_thirst{
+#percent_thirst{
         .percent;
         left:0%;
 }
