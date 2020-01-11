@@ -80,12 +80,12 @@ function toHTML(info){
         save +=     "ID:";
         save +=     info.user_id;
         save += '</div>';
-
+/*
         save += '<div id="Groups">';
         save +=     "Groups:";
         save +=     info.data.groups;
         save += '</div>';
-
+*/
         save += '<div id="Stats">';
         save +=     "Hunger:";
         save += '<div class="progress">';
