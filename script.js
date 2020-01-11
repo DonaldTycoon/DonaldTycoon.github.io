@@ -39,7 +39,7 @@ function Data(value) {
         value = 1;
     }
     var fetchUrl = 'http://api.tycoon.community:30120/status/data/' + value;
-    jQuery.ajax({
+    $.ajax({
     'url'      : fetchUrl,
     'type'     : 'get',
     'success'  : function(response) {
