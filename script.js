@@ -105,12 +105,11 @@ function toHTML(info){
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
         //hasCooldown(info.data.licenses.corp_cooldown);
-
     }
     document.getElementById('data').innerHTML = save;
-    document.getElementById('percent_health').style.left = (info.data.health-100) + '%';
-    document.getElementById('percent_thirst').style.left = info.data.thirst + '%';
-    document.getElementById('percent_hunger').style.left = info.data.hunger + '%';
+    document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
+    document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
+    document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
 }
 
 function levelFromExp(g_Exp) {
