@@ -105,7 +105,7 @@ function toHTML(info){
         save += '<div class="percent_health">' + info.data.health; + '</div >';
         save += '</div>';
         document.getElementByClass("percent_health").style[left] = info.data.health + '%';
-        save += '</div>'
+        save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
         //hasCooldown(info.data.licenses.corp_cooldown);
 
