@@ -73,13 +73,43 @@ function Data(value) {
 
 function toHTML(info){
     var save = document.getElementById('data').innerHTML;
-    var u_id = info.user_id;
-    save += '<div id="ID">'
-    save +=     u_id;
-    save += '</div>'
-    //levelFromExp(info.data.skills.physical.strength);
-    //hasCooldown(info.data.licenses.corp_cooldown);
+    if (info.user_id == null) {
+        save += 'Could not load Data';
+    } else {
+        save += '<div id="ID">';
+        save +=     "ID:";
+        save +=     info.user_id;
+        save += '</div>';
 
+        save += '<div id="Groups">';
+        save +=     "Groups:";
+        save +=     info.data.groups;
+        save += '</div>';
+
+        save += '<div id="Stats">';
+        save +=     "Hunger:";
+        save += '<div class="progress">';
+        save += '<div class="bar_hunger"></div>';
+        save += '<div class="percent_hunger">' + info.data.hunger; + '</div >';
+        save += '</div>';
+        document.getElementByClass("percent_hunger").style.[left] = info.data.hunger + '%';
+        save +=     "Thirst:";
+        save += '<div class="progress">';
+        save += '<div class="bar_thirst"></div>';
+        save += '<div class="percent_thirst">' + info.data.thirst; + '</div >';
+        save += '</div>';
+        document.getElementByClass("percent_thirst").style.[left] = info.data.thirst + '%';
+        save +=     "Health:";
+        save += '<div class="progress">';
+        save += '<div class="bar_health"></div>';
+        save += '<div class="percent_health">' + info.data.health; + '</div >';
+        save += '</div>';
+        document.getElementByClass("percent_health").style.[left] = info.data.health + '%';
+        save += '</div>'
+        //levelFromExp(info.data.skills.physical.strength);
+        //hasCooldown(info.data.licenses.corp_cooldown);
+
+    }
     document.getElementById('data').innerHTML = save;
 }
 
