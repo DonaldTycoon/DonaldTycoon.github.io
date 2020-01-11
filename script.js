@@ -38,7 +38,7 @@ function Data(value) {
     if (value === null || value == "" || value <= 0) {
         value = 1;
     }
-    var fetchUrl = 'http://api.tycoon.community:30120/status/data/' + value;
+    var fetchUrl = 'https://cors-anywhere.herokuapp.com/http://api.tycoon.community:30120/status/data/' + value;
     fetch(fetchUrl)
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
         var parser = new DOMParser();
@@ -46,7 +46,7 @@ function Data(value) {
         toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
     })
     .catch(function(err) {
-        var fetchUrl = 'http://api.tycoon.community:30122/status/data/' + value;
+        var fetchUrl = 'https://cors-anywhere.herokuapp.com/http://api.tycoon.community:30122/status/data/' + value;
         fetch(fetchUrl)
         fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
@@ -54,7 +54,7 @@ function Data(value) {
             toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
         })
         .catch(function(err) {
-            var fetchUrl = 'http://api.tycoon.community:30123/status/data/' + value;
+            var fetchUrl = 'https://cors-anywhere.herokuapp.com/http://api.tycoon.community:30123/status/data/' + value;
             fetch(fetchUrl)
             fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                 var parser = new DOMParser();
