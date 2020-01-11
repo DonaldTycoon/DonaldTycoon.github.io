@@ -90,17 +90,17 @@ function toHTML(info){
         save +=     "Hunger:";
         save += '<div class="progress">';
         save += '<div class="bar_hunger"></div>';
-        save += '<div class="percent_hunger">' + info.data.hunger; + '</div >';
+        save += '<div class="percent_hunger">' + info.data.hunger + '</div >';
         save += '</div>';
         save +=     "Thirst:";
         save += '<div class="progress">';
         save += '<div class="bar_thirst"></div>';
-        save += '<div class="percent_thirst">' + info.data.thirst; + '</div >';
+        save += '<div class="percent_thirst">' + info.data.thirst + '</div >';
         save += '</div>';
         save +=     "Health:";
         save += '<div class="progress">';
         save += '<div class="bar_health"></div>';
-        save += '<div class="percent_health">' + info.data.health; + '</div >';
+        save += '<div class="percent_health">' + (info.data.health-100) + '</div >';
         save += '</div>';
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
@@ -108,7 +108,7 @@ function toHTML(info){
 
     }
     document.getElementById('data').innerHTML = save;
-    document.getElementByClass("percent_health").style[left] = info.data.health + '%';
+    document.getElementByClass("percent_health").style[left] = (info.data.health-100) + '%';
     document.getElementByClass("percent_thirst").style[left] = info.data.thirst + '%';
     document.getElementByClass("percent_hunger").style[left] = info.data.hunger + '%';
 }
