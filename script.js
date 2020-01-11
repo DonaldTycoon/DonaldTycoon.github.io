@@ -92,25 +92,25 @@ function toHTML(info){
         save += '<div class="bar_hunger"></div>';
         save += '<div class="percent_hunger">' + info.data.hunger; + '</div >';
         save += '</div>';
-        document.getElementByClass("percent_hunger").style[left] = info.data.hunger + '%';
         save +=     "Thirst:";
         save += '<div class="progress">';
         save += '<div class="bar_thirst"></div>';
         save += '<div class="percent_thirst">' + info.data.thirst; + '</div >';
         save += '</div>';
-        document.getElementByClass("percent_thirst").style[left] = info.data.thirst + '%';
         save +=     "Health:";
         save += '<div class="progress">';
         save += '<div class="bar_health"></div>';
         save += '<div class="percent_health">' + info.data.health; + '</div >';
         save += '</div>';
-        document.getElementByClass("percent_health").style[left] = info.data.health + '%';
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
         //hasCooldown(info.data.licenses.corp_cooldown);
 
     }
     document.getElementById('data').innerHTML = save;
+    document.getElementByClass("percent_health").style[left] = info.data.health + '%';
+    document.getElementByClass("percent_thirst").style[left] = info.data.thirst + '%';
+    document.getElementByClass("percent_hunger").style[left] = info.data.hunger + '%';
 }
 
 function levelFromExp(g_Exp) {
