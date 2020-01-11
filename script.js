@@ -108,9 +108,9 @@ function toHTML(info){
 
     }
     document.getElementById('data').innerHTML = save;
-    document.getElementByClass("percent_health").style[left] = (info.data.health-100) + '%';
-    document.getElementByClass("percent_thirst").style[left] = info.data.thirst + '%';
-    document.getElementByClass("percent_hunger").style[left] = info.data.hunger + '%';
+    document.getElementById("percent_health").style[left] = (info.data.health-100) + '%';
+    document.getElementById("percent_thirst").style[left] = info.data.thirst + '%';
+    document.getElementById("percent_hunger").style[left] = info.data.hunger + '%';
 }
 
 function levelFromExp(g_Exp) {
