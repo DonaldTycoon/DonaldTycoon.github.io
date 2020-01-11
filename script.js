@@ -39,6 +39,17 @@ function Data(value) {
         value = 1;
     }
     var fetchUrl = 'http://api.tycoon.community:30120/status/data/' + value;
+    jQuery.ajax({
+    'url'      : fetchUrl,
+    'type'     : 'get',
+    'success'  : function(response) {
+        console.log('Successful request');
+    }
+    }).fail(function(xhr, err) {
+        console.error('Request error');
+    });
+/*
+    var fetchUrl = 'http://api.tycoon.community:30120/status/data/' + value;
     fetch(fetchUrl)
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
         var parser = new DOMParser();
@@ -68,7 +79,7 @@ function Data(value) {
             });
         });
     });
-
+*/
 }
 
 function toHTML(info){
