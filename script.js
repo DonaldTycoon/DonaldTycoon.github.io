@@ -31,7 +31,7 @@ function Start() {
         setTimeout(function(){
             Data(value);
         }, 500);
-    }, 500);
+    }, 1000);
 }
 
 function Data(value) {
