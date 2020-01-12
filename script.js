@@ -100,7 +100,7 @@ function toHTML(info){
         save += '<div id="percent_health">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
-
+        save += '<br><br>';
         save += '<div id="title">Skills</div>'
         //levelFromExp(info.data.skills.physical.strength);
         //hasCooldown(info.data.licenses.corp_cooldown);
