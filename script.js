@@ -78,96 +78,115 @@ function toHTML(info){
             document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business)))>=100) {
                 document.getElementById('bar_uncompleted_business').style.width = '100%';
+                document.getElementById('bar_uncompleted_business').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_business').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.casino.casino)))>=100) {
                 document.getElementById('bar_uncompleted_casino').style.width = '100%';
+                document.getElementById('bar_uncompleted_casino').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_casino').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.casino.casino))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.ems.ems)))>=100) {
                 document.getElementById('bar_uncompleted_ems').style.width = '100%';
+                document.getElementById('bar_uncompleted_ems').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_ems').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.ems.ems))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.farming)))>=100) {
                 document.getElementById('bar_uncompleted_farming').style.width = '100%';
+                document.getElementById('bar_uncompleted_farming').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_farming').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.farming))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.fishing)))>=100) {
                 document.getElementById('bar_uncompleted_fishing').style.width = '100%';
+                document.getElementById('bar_uncompleted_fishing').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_fishing').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.fishing))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.mining)))>=50) {
                 document.getElementById('bar_uncompleted_mining').style.width = '100%';
+                document.getElementById('bar_uncompleted_mining').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_mining').style.width = (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.mining)))*2) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill)))>=100) {
                 document.getElementById('bar_uncompleted_hunting').style.width = '100%';
+                document.getElementById('bar_uncompleted_hunting').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_hunting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.physical.strength)))>=30) {
                 document.getElementById('bar_uncompleted_strenth').style.width = '100%';
+                document.getElementById('bar_uncompleted_strenth').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_strenth').style.width = (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.physical.strength)))*3.3) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.cargos)))>=100) {
                 document.getElementById('bar_uncompleted_cargos').style.width = '100%';
+                document.getElementById('bar_uncompleted_cargos').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_cargos').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.cargos))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.heli)))>=100) {
                 document.getElementById('bar_uncompleted_heli').style.width = '100%';
+                document.getElementById('bar_uncompleted_heli').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_heli').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.heli))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.piloting)))>=100) {
                 document.getElementById('bar_uncompleted_piloting').style.width = '100%';
+                document.getElementById('bar_uncompleted_piloting').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_piloting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.piloting))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.player)))>=100) {
                 document.getElementById('bar_uncompleted_player').style.width = '100%';
+                document.getElementById('bar_uncompleted_player').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_player').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.player))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.racing)))>=100) {
                 document.getElementById('bar_uncompleted_racing').style.width = '100%';
+                document.getElementById('bar_uncompleted_racing').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_racing').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.racing))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.bus)))>=100) {
                 document.getElementById('bar_uncompleted_bus').style.width = '100%';
+                document.getElementById('bar_uncompleted_bus').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_bus').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.bus))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.train)))>=100) {
                 document.getElementById('bar_uncompleted_train').style.width = '100%';
+                document.getElementById('bar_uncompleted_train').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_train').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.train))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.garbage)))>=100) {
                 document.getElementById('bar_uncompleted_garbage').style.width = '100%';
+                document.getElementById('bar_uncompleted_garbage').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_garbage').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.garbage))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.mechanic)))>=100) {
                 document.getElementById('bar_uncompleted_mechanic').style.width = '100%';
+                document.getElementById('bar_uncompleted_mechanic').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_mechanic').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.mechanic))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.postop)))>=100) {
                 document.getElementById('bar_uncompleted_postop').style.width = '100%';
+                document.getElementById('bar_uncompleted_postop').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_postop').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.postop))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.trucking)))>=100) {
                 document.getElementById('bar_uncompleted_trucking').style.width = '100%';
+                document.getElementById('bar_uncompleted_trucking').style.backgroundcolor = '#B39700';
             } else {
                 document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.trucking))) + '%';
             }
