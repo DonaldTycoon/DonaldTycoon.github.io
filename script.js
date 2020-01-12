@@ -114,22 +114,18 @@ function getStats(info, save){
         save += '<div class="bar" id="bar_health"></div>';
         save += '<div class="bar-two" style="background-color: #0087024d"></div>';
         save += '<div id="percent_stats">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
-        save += '</div>';
-        save += '</div>';
-        save += '<br><br>';
+        save += '</div></div>';
         return(save);
 }
 
 function getSkills(data, save){
-        //
-        save += '<div id="title" class="spoiler spoiler-default spoiler-state-collapsed" data-toggle-text="Skills">';
-        save += '<div class="spoiler-content">'
+        save += '<div id="title">Skills</div>';
         save += '<div id="skill-title">Business Level:</div>';
         save += '<div class="progress-two">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
         save += '<div class="bar-two" style="background-color: #0063CA4d"></div>';
         save += '<div id="percent_skills">Business | Level ' + levelFromExp(Math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + Math.round(parseFloat(data.business.business)) + ' EXP)</i></div >';
-        save += '</div></div></div></div>';
+        save += '</div></div>';
         /*
         Casino:
         data.casino.casino
