@@ -10,14 +10,20 @@ body {
     margin: .5%;
     text-align: center;
 }
-
 #title {
     font-size: 25px;
     font-weight: bold;
     margin: .5%;
     text-align: center;
+    margin-top: 40px;
 }
-
+/*
+=====================================================================================
+|                                                                                   |
+|                                   Progress Bar                                    |
+|                                                                                   |
+=====================================================================================
+*/
 .progress{
         position:relative;
         width:30%;
@@ -32,7 +38,6 @@ body {
         height:20px;
         transition:width 1500ms;
 }
-
 #bar_hunger{
         background-color:#8b4600;
 }
@@ -46,7 +51,7 @@ body {
 #percent_thirst, #percent_health, #percent_hunger{
         position:absolute;
         display:inline-block;
-        top:1.8px;
+        top:1.2px;
         margin: .5%;
         left:2%;
 }
