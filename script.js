@@ -372,7 +372,7 @@ function getSkills(data, save){
 function levelFromExp(g_Exp) {
     for (var i = 0; i < data.length; i++) {
         if (parseInt(data[i])>g_Exp) {
-            return i;
+            return i-1;
         } else if (parseInt(data[i])==g_Exp) {
             var save = document.getElementById('data').innerHTML;
             return i;
