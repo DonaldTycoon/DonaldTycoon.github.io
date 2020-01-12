@@ -25,19 +25,36 @@ body {
         height:20px;
         transition:width 1500ms;
 }
-#bar_hunger{
+
+#bar_hunger:after{
         background-color:#ff8305;
 }
-#bar_health{
+
+#bar_hunger:before{
+        background-color:#FFFFFF;
+}
+
+#bar_health:after{
         background-color:#00ff04;
 }
-#bar_thirst{
+
+#bar_health:before{
+        background-color:#FFFFFF;
+}
+
+#bar_thirst:after{
         background-color:#0044ff;
 }
-#percent_thirst, #percent_health, #percent_hunger{
+
+#bar_thirst:before{
+        background-color:#FFFFFF;
+}
+
+#percent_thirst:after, #percent_health:after, #percent_hunger:after{
         position:absolute;
         display:inline-block;
         top:1.8px;
         margin: .5%;
         left:2%;
+        mix-blend-mode: difference;
 }
