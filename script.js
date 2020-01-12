@@ -92,6 +92,7 @@ function getID(info, save){
         save +=     info.user_id;
         save += '</div>';
         console.log(1);
+        console.log(save);
         return(save);
 }
 
@@ -113,6 +114,7 @@ function getStats(info, save){
         save += '</div>';
         save += '<br><br>';
         console.log(2);
+        console.log(save);
         return(save);
 }
 
@@ -139,6 +141,7 @@ function getSkills(data, save){
         data.train.train
         data.train.bus
         */
+        console.log(save);
         return(save);
 }
 
