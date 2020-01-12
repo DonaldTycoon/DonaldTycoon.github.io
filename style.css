@@ -34,13 +34,13 @@ body {
 }
 
 #bar_hunger{
-        background-color:#ff8305;
+        background-color:#8b4600;
 }
 #bar_health{
-        background-color:#00ff04;
+        background-color:#008702;
 }
 #bar_thirst{
-        background-color:#0044ff;
+        background-color:#002eac;
 }
 
 #percent_thirst, #percent_health, #percent_hunger{
