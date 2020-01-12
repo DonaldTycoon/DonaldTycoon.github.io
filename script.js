@@ -74,6 +74,11 @@ function toHTML(info){
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
             document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
+            if (levelFromExp(math.round(data.business.business))>100) {
+                document.getElementById('bar_uncompleted')[0].style.width = '100%';
+            } else {
+                document.getElementById('bar_uncompleted')[0].style.width = levelFromExp(math.round(data.business.business)) + '%';
+            }
             resolve();
         }));
         //hasCooldown(info.data.licenses.corp_cooldown);
@@ -97,15 +102,18 @@ function getStats(info, save){
         save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_hunger"></div>';
-        save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
+        save += '<div class="id="bar_hunger_two"></div>';
+        save += '<div id="percent_stats">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_thirst"></div>';
-        save += '<div id="percent_thirst">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
+        save += '<div class="id="bar_thirst_two"></div>';
+        save += '<div id="percent_stats">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_health"></div>';
-        save += '<div id="percent_health">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
+        save += '<div class="id="bar_health_two"></div>';
+        save += '<div id="percent_stats">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
         save += '<br><br>';
@@ -114,6 +122,13 @@ function getStats(info, save){
 
 function getSkills(data, save){
         save += '<div id="title">Skills</div>';
+        save += '<div id="skill-title">Business Level</div>';
+        save += '<div class="progress">';
+        save += '<div class="bar" id="bar_uncompleted"></div>';
+        save += '<div class="id="bar_uncompleted_two"></div>';
+        save += '<div id="percent_skills">Business|Level ' + levelFromExp(math.round(data.business.business)) + '  / 100 <i>(' + math.round(data.business.business) + ' EXP)</i></div >';
+        save += '</div>';
+        save += '</div>';
         /*
         data.farming.mining
         data.farming.farming
@@ -127,7 +142,7 @@ function getSkills(data, save){
         data.trucking.postop
         data.trucking.trucking
         data.physical.strength
-        data.business.business
+
         data.hunting.skills
         data.player.player
         data.player.racing

@@ -17,6 +17,11 @@ body {
     text-align: center;
     margin-top: 40px;
 }
+#skill-title {
+    font-size: 15px;
+    margin: .5%;
+    text-align: center;
+}
 /*
 =====================================================================================
 |                                                                                   |
@@ -25,33 +30,74 @@ body {
 =====================================================================================
 */
 .progress{
-        position:relative;
-        width:30%;
-        border:1px solid #FFF;
-        position:relative;
-        padding:3px;
-        margin:1%;
-        float: left;
+    position:relative;
+    width:30%;
+    border:1px solid #FFF;
+    position:relative;
+    padding:3px;
+    margin:1%;
+    float: left;
 }
-.bar{
-        width:50%;
-        height:20px;
-        transition:width 1500ms;
+.progress-two{
+    position:relative;
+    width:94%;
+    border:1px solid #FFF;
+    position:relative;
+    padding:3px;
+    margin:1%;
+    float: left;
 }
-#bar_hunger{
-        background-color:#8b4600;
-}
-#bar_health{
-        background-color:#008702;
-}
-#bar_thirst{
-        background-color:#002eac;
+.bar-two{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    float: right;
+    width: 98%;
+    height: 20px;
 }
 
-#percent_thirst, #percent_health, #percent_hunger{
-        position:absolute;
-        display:inline-block;
-        top:1.2px;
-        margin: .5%;
-        left:2%;
+#bar_hunger{
+    background-color:#8b4600;
+}
+#bar_hunger_two{
+    background-color: #002eac4d;
+}
+#bar_health{
+    background-color:#008702;
+}
+#bar_health_two{
+    background-color:#0087024d;
+}
+#bar_thirst{
+    background-color:#002eac;
+}
+#bar_thirst_two{
+    background-color:#002eac4d;
+}
+#bar_uncompleted{
+    background-color:#002eac;
+}
+#bar_uncompleted_two{
+    background-color:#002eac4d;
+}
+#bar_completed{
+    background-color:#002eac;
+}
+#bar_completed_two{
+    background-color:#002eac4d;
+}
+
+#percent_stats{
+    position:absolute;
+    display:inline-block;
+    top:1.2px;
+    margin: .5%;
+    left:2%;
+}
+#percent_skills {
+    position:absolute;
+    display:inline-block;
+    top:1.2px;
+    margin: .5%;
+    left:2%;
 }
