@@ -71,9 +71,9 @@ function toHTML(info){
         })
         .then(write(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))))
         .then(new Promise(function(resolve, reject) {
-            document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
-            document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
-            document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
+            document.getElementByClass('bar_health').style.width = (info.data.health-100) + '%';
+            document.getElementByClass('bar_thirst').style.width = info.data.thirst + '%';
+            document.getElementByClass('bar_hunger').style.width = info.data.hunger + '%';
             resolve();
         }));
         //hasCooldown(info.data.licenses.corp_cooldown);
