@@ -154,4 +154,4 @@ function timeConverter(UNIX_timestamp){
 }
 
 Start();
-setInterval(() => Start(), 5000);
+//setInterval(() => Start(), 5000);
