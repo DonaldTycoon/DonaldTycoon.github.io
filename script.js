@@ -19,7 +19,7 @@ function getUrlParam(parameter, defaultvalue){
 function Start() {
     var value = getUrlParam('id','2');
     data = [];
-    for (i = 0 ;i<=500;i++) {
+    for (i = 0 ;i<=1000;i++) {
         if (i>0) {
             data.push(data[i-1]+(i*5));
         } else {
