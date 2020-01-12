@@ -69,9 +69,7 @@ function toHTML(info){
         new Promise(function(resolve, reject) {
             setTimeout(() => resolve(1), 500);
         })
-        .then(getID(info, save))
-        .then(getStats(info, save))
-        .then(getSkills(info.data.gaptitudes_v, save))
+        .then(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))
         .then(function(save){
             document.getElementById('data').innerHTML = save;
             return;
