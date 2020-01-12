@@ -104,10 +104,10 @@ function toHTML(info){
             } else {
                 document.getElementById('bar_uncompleted_mining').style.width = (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.mining)))*2) + '%';
             }
-            if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skills)))>=100) {
+            if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill)))>=100) {
                 document.getElementById('bar_uncompleted_hunting').style.width = '100%';
             } else {
-                document.getElementById('bar_uncompleted_hunting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skills))) + '%';
+                document.getElementById('bar_uncompleted_hunting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill))) + '%';
             }
             if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.physical.strength)))>=30) {
                 document.getElementById('bar_uncompleted_strenth').style.width = '100%';
@@ -251,7 +251,7 @@ function getSkills(data, save){
         save += '<div class="progress-two">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
         save += '<div class="bar-two" style="background-color: #0063CA4d"></div>';
-        save += '<div id="percent_skills">Hunting | Level ' + levelFromExp(Math.round(parseFloat(data.hunting.skills))) + '  / 100 <i>(' + Math.round(parseFloat(data.hunting.skills)) + ' EXP)</i></div >';
+        save += '<div id="percent_skills">Hunting | Level ' + levelFromExp(Math.round(parseFloat(data.hunting.skill))) + '  / 100 <i>(' + Math.round(parseFloat(data.hunting.skill)) + ' EXP)</i></div >';
         save += '</div></div>';
 
         save += '<div id="skill-title">Physical:</div>';
