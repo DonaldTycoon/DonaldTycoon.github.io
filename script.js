@@ -75,7 +75,7 @@ function toHTML(info){
         .then(function(save){
             document.getElementById('data').innerHTML = save;
             return;
-        }))
+        })
         .then(new Promise(function(resolve, reject) {
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
