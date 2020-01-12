@@ -71,7 +71,7 @@ function toHTML(info){
         })
         .then(getID(info, save))
         .then(getStats(info, save))
-        .then(getSkills(info.data.gaptitudes_v, save));
+        .then(getSkills(info.data.gaptitudes_v, save))
         .then(function(resolve, reject) {
             document.getElementById('data').innerHTML = save;
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
