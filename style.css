@@ -88,14 +88,14 @@ body {
 #percent_stats{
     position:absolute;
     display:inline-block;
-    top:-0.8px;
+    top:1.2px;
     margin: .5%;
     left:40%;
 }
 #percent_skills {
     position:absolute;
     display:inline-block;
-    top:1.2px;
+    top:-0.8px;
     margin: .5%;
-    left:2%;
+    left:40%;
 }
