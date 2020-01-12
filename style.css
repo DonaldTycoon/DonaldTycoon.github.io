@@ -22,13 +22,13 @@
         transition:width 150ms;
 }
 #bar_hunger{
-        background-color:#00ff00;
+        background-color:#ff8305;
 }
 #bar_health{
-        background-color:#00ff00;
+        background-color:#00ff04;
 }
 #bar_thirst{
-        background-color:#00ff00;
+        background-color:#0044ff;
 }
 #percent_thirst, #percent_health, #percent_hunger{
         position:absolute;
