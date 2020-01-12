@@ -72,7 +72,10 @@ function toHTML(info){
         .then(getID(info, save))
         .then(getStats(info, save))
         .then(getSkills(info.data.gaptitudes_v, save))
-        .then(document.getElementById('data').innerHTML = save;)
+        .then(function(resolve, reject) {
+            document.getElementById('data').innerHTML = save;
+            resolve();
+        })
         .then(function(resolve, reject) {
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
