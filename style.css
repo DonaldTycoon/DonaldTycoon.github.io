@@ -26,35 +26,20 @@ body {
         transition:width 1500ms;
 }
 
-#bar_hunger:after{
+#bar_hunger{
         background-color:#ff8305;
 }
-
-#bar_hunger:before{
-        background-color:#FFFFFF;
-}
-
-#bar_health:after{
+#bar_health{
         background-color:#00ff04;
 }
-
-#bar_health:before{
-        background-color:#FFFFFF;
-}
-
-#bar_thirst:after{
+#bar_thirst{
         background-color:#0044ff;
 }
 
-#bar_thirst:before{
-        background-color:#FFFFFF;
-}
-
-#percent_thirst:after, #percent_health:after, #percent_hunger:after{
+#percent_thirst, #percent_health, #percent_hunger{
         position:absolute;
         display:inline-block;
         top:1.8px;
         margin: .5%;
         left:2%;
-        mix-blend-mode: difference;
 }
