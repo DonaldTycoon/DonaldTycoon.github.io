@@ -88,15 +88,15 @@ function toHTML(info){
         save += '<div id="Stats">';
         save += '<div class="progress">';
         save += '<div id="bar_hunger"></div>';
-        save += '<div id="percent_hunger" data-content="Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%"></div >';
+        save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div id="bar_thirst"></div>';
-        save += '<div id="percent_thirst" data-content="Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%"></div >';
+        save += '<div id="percent_thirst">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div id="bar_health"></div>';
-        save += '<div id="percent_health" data-content="Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%"></div >';
+        save += '<div id="percent_health">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
