@@ -85,7 +85,8 @@ function toHTML(info){
         save += '</div>';
 */
 
-        save += '<div id="Stats">';
+        save += '<div id="stats">';
+        save += '<div id="title">Stats</div>'
         save += '<div class="progress">';
         save += '<div id="bar_hunger"></div>';
         save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';

@@ -11,6 +11,13 @@ body {
     text-align: center;
 }
 
+#Title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: .5%;
+    text-align: center;
+}
+
 .progress{
         position:relative;
         width:30%;
