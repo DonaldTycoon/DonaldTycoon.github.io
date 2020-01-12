@@ -71,9 +71,9 @@ function toHTML(info){
         })
         .then(write(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))))
         .then(new Promise(function(resolve, reject) {
-            document.getElementByClass('bar_health').style.width = (info.data.health-100) + '%';
-            document.getElementByClass('bar_thirst').style.width = info.data.thirst + '%';
-            document.getElementByClass('bar_hunger').style.width = info.data.hunger + '%';
+            document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
+            document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
+            document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
             resolve();
         }));
         //hasCooldown(info.data.licenses.corp_cooldown);
@@ -96,15 +96,15 @@ function getStats(info, save){
         save += '<div id="stats">';
         save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
-        save += '<div id="bar" class="bar_hunger"></div>';
+        save += '<div class="bar" id="bar_hunger"></div>';
         save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
-        save += '<div id="bar" class="bar_thirst"></div>';
+        save += '<div class="bar" id="bar_thirst"></div>';
         save += '<div id="percent_thirst">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
-        save += '<div id="bar" class="bar_health"></div>';
+        save += '<div class="bar" id="bar_health"></div>';
         save += '<div id="percent_health">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
