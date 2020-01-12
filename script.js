@@ -72,18 +72,15 @@ function toHTML(info){
         .then(getID(info, save))
         .then(getStats(info, save))
         .then(getSkills(info.data.gaptitudes_v, save));
-/*
-        save += '<div id="Groups">';
-        save +=     "Groups:";
-        save +=     info.data.groups;
-        save += '</div>';
-*/
+        .then(function(resolve, reject) {
+            document.getElementById('data').innerHTML = save;
+            document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
+            document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
+            document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
+            resolve();
+        });
         //hasCooldown(info.data.licenses.corp_cooldown);
     }
-    document.getElementById('data').innerHTML = save;
-    document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
-    document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
-    document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
 }
 
 function getID(info, save){
