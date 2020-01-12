@@ -20,6 +20,8 @@ body {
 #skill-title {
     font-size: 15px;
     text-align: Left;
+    margin: .5%;
+    margin-left: 1%;
 }
 /*
 =====================================================================================
@@ -28,6 +30,7 @@ body {
 |                                                                                   |
 =====================================================================================
 */
+
 .progress{
     position:relative;
     width:30%;
@@ -39,6 +42,7 @@ body {
     margin-bottom: 1%;
     float: left;
 }
+
 .progress-two{
     position:relative;
     width:95%;

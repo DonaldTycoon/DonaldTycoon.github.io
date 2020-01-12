@@ -122,7 +122,7 @@ function getStats(info, save){
 
 function getSkills(data, save){
         save += '<div id="title">Skills</div>';
-        save += '<div id="skill-title">Business Level</div>';
+        save += '<div id="skill-title">Business Level:</div>';
         save += '<div class="progress-two">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
         save += '<div class="bar-two" style="background-color: #0063CA4d"></div>';
