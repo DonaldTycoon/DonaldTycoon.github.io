@@ -104,26 +104,26 @@ body {
     background-color:#0063CA;
 }
 
-#bar_completed_business,
-#bar_completed_casino,
-#bar_completed_ems,
-#bar_completed_mining,
-#bar_completed_farming,
-#bar_completed_fishing,
-#bar_completed_hunting,
-#bar_completed_strenth,
-#bar_completed_cargos,
-#bar_completed_heli,
-#bar_completed_piloting,
-#bar_completed_player,
-#bar_completed_racing,
-#bar_completed_train,
-#bar_completed_bus,
-#bar_completed_garbage,
-#bar_completed_mechanic,
-#bar_completed_postop,
-#bar_completed_trucking{
-    background-color:#B39700;
+#bar_two_business,
+#bar_two_casino,
+#bar_two_ems,
+#bar_two_mining,
+#bar_two_farming,
+#bar_two_fishing,
+#bar_two_hunting,
+#bar_two_strenth,
+#bar_two_cargos,
+#bar_two_heli,
+#bar_two_piloting,
+#bar_two_player,
+#bar_two_racing,
+#bar_two_train,
+#bar_two_bus,
+#bar_two_garbage,
+#bar_two_mechanic,
+#bar_two_postop,
+#bar_two_trucking{
+    background-color: #0063CA4d;
 }
 
 #percent_stats{
