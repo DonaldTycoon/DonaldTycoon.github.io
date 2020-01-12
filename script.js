@@ -87,15 +87,18 @@ function toHTML(info){
 }
 
 function getID(info, save){
-    save += '<div id="ID">';
-    save +=     "ID: ";
-    save +=     info.user_id;
-    save += '</div>';
-    console.log(1);
-    resolve(save);
+    return new Promise(function(resolve, reject) {
+        save += '<div id="ID">';
+        save +=     "ID: ";
+        save +=     info.user_id;
+        save += '</div>';
+        console.log(1);
+        resolve(save);
+    });
 }
 
 function getStats(info, save){
+    return new Promise(function(resolve, reject) {
         save += '<div id="stats">';
         save += '<div id="title">Stats</div>'
         save += '<div class="progress">';
@@ -114,32 +117,35 @@ function getStats(info, save){
         save += '<br><br>';
         console.log(2);
         resolve(save);
+    });
 }
 
 function getSkills(data, save){
-    save += '<div id="title">Skills</div>'
-    console.log(3);
-    /*
-    data.farming.mining
-    data.farming.farming
-    data.farming.fishing
-    data.piloting.heli
-    data.piloting.piloting
-    data.piloting.cargos
-    data.casino.casino
-    data.trucking.garbage
-    data.trucking.mechanic
-    data.trucking.postop
-    data.trucking.trucking
-    data.physical.strength
-    data.business.business
-    data.hunting.skills
-    data.player.player
-    data.player.racing
-    data.train.train
-    data.train.bus
-    */
+    return new Promise(function(resolve, reject) {
+        save += '<div id="title">Skills</div>'
+        console.log(3);
+        /*
+        data.farming.mining
+        data.farming.farming
+        data.farming.fishing
+        data.piloting.heli
+        data.piloting.piloting
+        data.piloting.cargos
+        data.casino.casino
+        data.trucking.garbage
+        data.trucking.mechanic
+        data.trucking.postop
+        data.trucking.trucking
+        data.physical.strength
+        data.business.business
+        data.hunting.skills
+        data.player.player
+        data.player.racing
+        data.train.train
+        data.train.bus
+        */
     resolve(save);
+});
 }
 
 function levelFromExp(g_Exp) {
