@@ -97,7 +97,7 @@ function getID(info, save){
 function getStats(info, save){
     return new Promise(function(resolve, reject) {
         save += '<div id="stats">';
-        save += '<div id="title">Stats</div>'
+        save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
         save += '<div id="bar_hunger"></div>';
         save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
@@ -119,7 +119,7 @@ function getStats(info, save){
 
 function getSkills(data, save){
     return new Promise(function(resolve, reject) {
-        save += '<div id="title">Skills</div>'
+        save += '<div id="title">Skills</div>';
         console.log(3);
         /*
         data.farming.mining
