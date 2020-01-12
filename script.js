@@ -87,18 +87,15 @@ function toHTML(info){
 }
 
 function getID(info, save){
-    return new Promise(function(resolve, reject) {
         save += '<div id="ID">';
         save +=     "ID: ";
         save +=     info.user_id;
         save += '</div>';
         console.log(1);
-        resolve(save);
-    });
+        return(save);
 }
 
 function getStats(info, save){
-    return new Promise(function(resolve, reject) {
         save += '<div id="stats">';
         save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
@@ -116,12 +113,10 @@ function getStats(info, save){
         save += '</div>';
         save += '<br><br>';
         console.log(2);
-        resolve(save);
-    });
+        return(save);
 }
 
 function getSkills(data, save){
-    return new Promise(function(resolve, reject) {
         save += '<div id="title">Skills</div>';
         console.log(3);
         /*
@@ -144,8 +139,7 @@ function getSkills(data, save){
         data.train.train
         data.train.bus
         */
-    resolve(save);
-});
+        return(save);
 }
 
 function levelFromExp(g_Exp) {
