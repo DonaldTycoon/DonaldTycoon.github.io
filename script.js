@@ -82,7 +82,6 @@ function toHTML(info){
 
 function write(save) {
     document.getElementById('data').innerHTML = save;
-    return();
 }
 
 function getID(info, save){
