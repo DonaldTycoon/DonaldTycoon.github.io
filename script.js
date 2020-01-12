@@ -77,7 +77,7 @@ function toHTML(info){
         save += 'Could not load Data';
     } else {
         save += '<div id="ID">';
-        save +=     "ID:";
+        save +=     "ID: ";
         save +=     info.user_id;
         save += '</div>';
 /*

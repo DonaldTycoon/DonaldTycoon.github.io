@@ -3,6 +3,8 @@
 #ID {
     font-size: 30px;
     font-weight: bold;
+    margin: .5%;
+    text-align: center;
 }
 
 .progress{
