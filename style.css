@@ -41,6 +41,7 @@ body {
     margin-right: 1%;
     margin-bottom: 1%;
     float: left;
+    height: 20px;
 }
 
 .progress-two{
@@ -53,6 +54,7 @@ body {
     margin-right: 1%;
     margin-bottom: 1%;
     float: left;
+    height: 20px;
 }
 
 .bar{
@@ -62,11 +64,9 @@ body {
 }
 
 .bar-two{
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    float: right;
-    width: 98%;
+    position: relative;
+    top: -20px;
+    width: 100%;
     height: 20px;
 }
 
@@ -136,7 +136,7 @@ body {
 #percent_skills {
     position:absolute;
     display:inline-block;
-    top:-0.8px;
+    top:-1.8px;
     margin: .5%;
     left:40%;
 }
