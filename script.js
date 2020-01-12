@@ -74,10 +74,12 @@ function toHTML(info){
     if (info.user_id == null) {
         save += 'Could not load Data';
     } else {
-        save += '<div id="ID">';
-        save +=     "ID: ";
-        save +=     info.user_id;
-        save += '</div>';
+        new Promise(function(resolve, reject) {
+            setTimeout(() => resolve(1), 500);
+        })
+        .then(getID(info, save))
+        .then(getStats(info, save))
+        .then(getSkills(info.data.gaptitudes_v, save));
 /*
         save += '<div id="Groups">';
         save +=     "Groups:";
@@ -85,6 +87,23 @@ function toHTML(info){
         save += '</div>';
 */
 
+        //hasCooldown(info.data.licenses.corp_cooldown);
+    }
+    document.getElementById('data').innerHTML = save;
+    document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
+    document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
+    document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
+}
+
+function getID(info, save){
+    save += '<div id="ID">';
+    save +=     "ID: ";
+    save +=     info.user_id;
+    save += '</div>';
+    resolve(save);
+}
+
+function getStats(info, save){
         save += '<div id="stats">';
         save += '<div id="title">Stats</div>'
         save += '<div class="progress">';
@@ -101,14 +120,32 @@ function toHTML(info){
         save += '</div>';
         save += '</div>';
         save += '<br><br>';
-        save += '<div id="title">Skills</div>'
-        //levelFromExp(info.data.skills.physical.strength);
-        //hasCooldown(info.data.licenses.corp_cooldown);
-    }
-    document.getElementById('data').innerHTML = save;
-    document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
-    document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
-    document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
+        resolve(save);
+}
+
+function getSkills(data, save){
+    save += '<div id="title">Skills</div>'
+    /*
+    data.farming.mining
+    data.farming.farming
+    data.farming.fishing
+    data.piloting.heli
+    data.piloting.piloting
+    data.piloting.cargos
+    data.casino.casino
+    data.trucking.garbage
+    data.trucking.mechanic
+    data.trucking.postop
+    data.trucking.trucking
+    data.physical.strength
+    data.business.business
+    data.hunting.skills
+    data.player.player
+    data.player.racing
+    data.train.train
+    data.train.bus
+    */
+    resolve(save);
 }
 
 function levelFromExp(g_Exp) {
