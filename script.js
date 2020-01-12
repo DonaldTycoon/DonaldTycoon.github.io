@@ -69,10 +69,8 @@ function toHTML(info){
         new Promise(function(resolve, reject) {
             setTimeout(() => resolve(1), 500);
         })
-        .then(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save))))
-        .then(function(save){
+        .then(function(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))){
             document.getElementById('data').innerHTML = save;
-            return();
         })
         .then(new Promise(function(resolve, reject) {
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
