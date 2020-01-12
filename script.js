@@ -90,6 +90,7 @@ function getID(info, save){
     save +=     "ID: ";
     save +=     info.user_id;
     save += '</div>';
+    console.log(1);
     resolve(save);
 }
 
@@ -110,11 +111,13 @@ function getStats(info, save){
         save += '</div>';
         save += '</div>';
         save += '<br><br>';
+        console.log(2);
         resolve(save);
 }
 
 function getSkills(data, save){
     save += '<div id="title">Skills</div>'
+    console.log(3);
     /*
     data.farming.mining
     data.farming.farming
