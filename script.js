@@ -102,17 +102,17 @@ function getStats(info, save){
         save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_hunger"></div>';
-        save += '<div class="bar-two" "id="bar_hunger_two"></div>';
+        save += '<div class="bar" style="background-color: #8b46004d;></div>';
         save += '<div id="percent_stats">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_thirst"></div>';
-        save += '<div class="bar-two" "id="bar_thirst_two"></div>';
+        save += '<div class="bar" style="background-color: #002eac4d"></div>';
         save += '<div id="percent_stats">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_health"></div>';
-        save += '<div class="bar-two" "id="bar_health_two"></div>';
+        save += '<div class="bar" style="background-color: #0087024d;"></div>';
         save += '<div id="percent_stats">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
@@ -125,8 +125,8 @@ function getSkills(data, save){
         save += '<div id="skill-title">Business Level</div>';
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
-        save += '<div class="bar-two" "id="bar_uncompleted_two"></div>';
-        save += '<div id="percent_skills">Business|Level ' + levelFromExp(Math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + Math.round(parseFloat(data.business.business)) + ' EXP)</i></div >';
+        save += '<div class="bar-two" style="background-color: #00264D"></div>';
+        save += '<div id="percent_skills">Business | Level ' + levelFromExp(Math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + Math.round(parseFloat(data.business.business)) + ' EXP)</i></div >';
         save += '</div>';
         save += '</div>';
         /*

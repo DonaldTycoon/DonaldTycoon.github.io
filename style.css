@@ -19,8 +19,7 @@ body {
 }
 #skill-title {
     font-size: 15px;
-    margin: .5%;
-    text-align: center;
+    text-align: Left;
 }
 /*
 =====================================================================================
@@ -35,7 +34,9 @@ body {
     border:1px solid #FFF;
     position:relative;
     padding:3px;
-    margin:1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
     float: left;
 }
 .progress-two{
@@ -44,7 +45,9 @@ body {
     border:1px solid #FFF;
     position:relative;
     padding:3px;
-    margin:1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
     float: left;
 }
 
@@ -67,37 +70,25 @@ body {
     background-color:#8b4600;
 }
 #bar_hunger_two{
-    background-color: #002eac4d;
+    background-color: #8b46004d;
 }
 #bar_health{
     background-color:#008702;
 }
-#bar_health_two{
-    background-color:#0087024d;
-}
 #bar_thirst{
     background-color:#002eac;
-}
-#bar_thirst_two{
-    background-color:#002eac4d;
 }
 #bar_uncompleted{
     background-color:#0063CA;
 }
-#bar_uncompleted_two{
-    background-color:#00264D;
-}
 #bar_completed{
-    background-color:#B39700;
-}
-#bar_completed_two{
     background-color:#B39700;
 }
 
 #percent_stats{
     position:absolute;
     display:inline-block;
-    top:1.2px;
+    top:-0.8px;
     margin: .5%;
     left:2%;
 }
