@@ -13,13 +13,13 @@
         border:1px solid #333;
         position:relative;
         padding:3px;
-        margin:.5%;
+        margin:1.319%;
         float: left;
 }
 #bar_thirst, #bar_hunger, #bar_health{
         width:50%;
         height:20px;
-        transition:width 150ms;
+        transition:width 1500ms;
 }
 #bar_hunger{
         background-color:#ff8305;
@@ -33,6 +33,7 @@
 #percent_thirst, #percent_health, #percent_hunger{
         position:absolute;
         display:inline-block;
-        top:3px;
-        margin: auto;
+        top:1.8px;
+        margin: .5%;
+        left:2%;
 }

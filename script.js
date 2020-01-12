@@ -87,15 +87,15 @@ function toHTML(info){
         save += '<div id="Stats">';
         save += '<div class="progress">';
         save += '<div id="bar_hunger"></div>';
-        save += '<div id="percent_hunger"> Hunger: ' + info.data.hunger + '</div >';
+        save += '<div id="percent_hunger"> Hunger: ' + info.data.hunger + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div id="bar_thirst"></div>';
-        save += '<div id="percent_thirst"> Thirst: ' + info.data.thirst + '</div >';
+        save += '<div id="percent_thirst"> Thirst: ' + info.data.thirst + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
         save += '<div id="bar_health"></div>';
-        save += '<div id="percent_health"> Health: ' + (info.data.health-100) + '</div >';
+        save += '<div id="percent_health"> Health: ' + (info.data.health-100) + '%</div >';
         save += '</div>';
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
