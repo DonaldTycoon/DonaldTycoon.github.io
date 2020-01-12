@@ -71,7 +71,7 @@ function toHTML(info){
         })
         .then(new Promise(function(resolve, reject) {
             resolve(write(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))));
-        }));
+        }))
         .then(new Promise(function(resolve, reject) {
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
