@@ -72,16 +72,16 @@ function toHTML(info){
         .then(getID(info, save))
         .then(getStats(info, save))
         .then(getSkills(info.data.gaptitudes_v, save))
-        .then(new Promise(function(resolve, reject)) {
+        .then(new Promise(function(resolve, reject) {
             document.getElementById('data').innerHTML = save;
             resolve();
-        })
-        .then(new Promise(function(resolve, reject)) {
+        }))
+        .then(new Promise(function(resolve, reject) {
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
             document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
             resolve();
-        });
+        }));
         //hasCooldown(info.data.licenses.corp_cooldown);
     }
 }
