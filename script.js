@@ -89,8 +89,6 @@ function getID(info, save){
         save +=     "ID: ";
         save +=     info.user_id;
         save += '</div>';
-        console.log(1);
-        console.log(save);
         return(save);
 }
 
@@ -98,27 +96,24 @@ function getStats(info, save){
         save += '<div id="stats">';
         save += '<div id="title">Stats</div>';
         save += '<div class="progress">';
-        save += '<div id="bar_hunger"></div>';
+        save += '<div id="bar" class="bar_hunger"></div>';
         save += '<div id="percent_hunger">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
-        save += '<div id="bar_thirst"></div>';
+        save += '<div id="bar" class="bar_thirst"></div>';
         save += '<div id="percent_thirst">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
         save += '</div>';
         save += '<div class="progress">';
-        save += '<div id="bar_health"></div>';
+        save += '<div id="bar" class="bar_health"></div>';
         save += '<div id="percent_health">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
         save += '</div>';
         save += '</div>';
         save += '<br><br>';
-        console.log(2);
-        console.log(save);
         return(save);
 }
 
 function getSkills(data, save){
         save += '<div id="title">Skills</div>';
-        console.log(3);
         /*
         data.farming.mining
         data.farming.farming
@@ -139,7 +134,6 @@ function getSkills(data, save){
         data.train.train
         data.train.bus
         */
-        console.log(save);
         return(save);
 }
 

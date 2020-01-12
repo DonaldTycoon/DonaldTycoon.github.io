@@ -27,19 +27,19 @@ body {
         margin:1%;
         float: left;
 }
-#bar_thirst, #bar_hunger, #bar_health{
+#bar{
         width:50%;
         height:20px;
         transition:width 1500ms;
 }
 
-#bar_hunger{
+.bar_hunger{
         background-color:#8b4600;
 }
-#bar_health{
+.bar_health{
         background-color:#008702;
 }
-#bar_thirst{
+.bar_thirst{
         background-color:#002eac;
 }
 
