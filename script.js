@@ -27,10 +27,7 @@ function Start() {
         }
     }
     setTimeout(function(){
-        document.getElementById('data').innerHTML = '';
-        setTimeout(function(){
             Data(value);
-        }, 500);
     }, 1000);
 }
 
@@ -72,6 +69,7 @@ function Data(value) {
 }
 
 function toHTML(info){
+    document.getElementById('data').innerHTML = '';
     var save = document.getElementById('data').innerHTML;
     if (info.user_id == null) {
         save += 'Could not load Data';
