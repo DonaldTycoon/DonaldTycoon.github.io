@@ -74,10 +74,10 @@ function toHTML(info){
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
             document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
-            if (levelFromExp(math.round(data.business.business))>100) {
+            if (levelFromExp(math.round(parseFloat(data.business.business)))>100) {
                 document.getElementById('bar_uncompleted')[0].style.width = '100%';
             } else {
-                document.getElementById('bar_uncompleted')[0].style.width = levelFromExp(math.round(data.business.business)) + '%';
+                document.getElementById('bar_uncompleted')[0].style.width = levelFromExp(math.round(parseFloat(data.business.business))) + '%';
             }
             resolve();
         }));
@@ -126,7 +126,7 @@ function getSkills(data, save){
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
         save += '<div class="id="bar_uncompleted_two"></div>';
-        save += '<div id="percent_skills">Business|Level ' + levelFromExp(math.round(data.business.business)) + '  / 100 <i>(' + math.round(data.business.business) + ' EXP)</i></div >';
+        save += '<div id="percent_skills">Business|Level ' + levelFromExp(math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + math.round(parseFloat(data.business.business) + ' EXP)</i></div >';
         save += '</div>';
         save += '</div>';
         /*
