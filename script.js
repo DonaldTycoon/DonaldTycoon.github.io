@@ -126,28 +126,45 @@ function getSkills(data, save){
         save += '<div class="progress">';
         save += '<div class="bar" id="bar_uncompleted"></div>';
         save += '<div class="id="bar_uncompleted_two"></div>';
-        save += '<div id="percent_skills">Business|Level ' + levelFromExp(math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + math.round(parseFloat(data.business.business) + ' EXP)</i></div >';
+        save += '<div id="percent_skills">Business|Level ' + levelFromExp(math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + math.round(parseFloat(data.business.business)) + ' EXP)</i></div >';
         save += '</div>';
         save += '</div>';
         /*
+        Casino:
+        data.casino.casino
+
+        EMS Level:
+        data.ems.ems
+
+        Gathering Industries:
         data.farming.mining
         data.farming.farming
         data.farming.fishing
+
+        Hunting:
+        data.hunting.skills
+
+        Physical:
+        data.physical.strength
+
+        Piloting:
+        data.piloting.cargos
         data.piloting.heli
         data.piloting.piloting
-        data.piloting.cargos
-        data.casino.casino
+
+        Player:
+        data.player.player
+        data.player.racing
+
+        Public Transport:
+        data.train.train
+        data.train.bus
+
+        Trucking:
         data.trucking.garbage
         data.trucking.mechanic
         data.trucking.postop
         data.trucking.trucking
-        data.physical.strength
-
-        data.hunting.skills
-        data.player.player
-        data.player.racing
-        data.train.train
-        data.train.bus
         */
         return(save);
 }
