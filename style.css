@@ -32,13 +32,5 @@
         position:absolute;
         display:inline-block;
         top:3px;
-}
-#percent_hunger{
-        left:0%;
-}
-#percent_health{
-        left:0%;
-}
-#percent_thirst{
-        left:0%;
+                left:50%;
 }
