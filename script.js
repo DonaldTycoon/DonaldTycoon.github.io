@@ -62,9 +62,9 @@ function Data(value) {
                 var save = document.getElementById('data').innerHTML;
                 save += 'Could not load Data';
                 document.getElementById('data').innerHTML = save;
-            })
-        })
-    })
+            });
+        });
+    });
 
 }
 
@@ -85,7 +85,19 @@ function toHTML(info){
         save += '</div>';
 */
 
-        save += stats(save);
+        save += '<div id="Stats">';
+        save += '<div class="progress">';
+        save += '<div id="bar_hunger"></div>';
+        save += '<div id="percent_hunger"> Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
+        save += '</div>';
+        save += '<div class="progress">';
+        save += '<div id="bar_thirst"></div>';
+        save += '<div id="percent_thirst"> Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
+        save += '</div>';
+        save += '<div class="progress">';
+        save += '<div id="bar_health"></div>';
+        save += '<div id="percent_health"> Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
+        save += '</div>';
         save += '</div>';
         //levelFromExp(info.data.skills.physical.strength);
         //hasCooldown(info.data.licenses.corp_cooldown);
@@ -94,23 +106,6 @@ function toHTML(info){
     document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
     document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
     document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
-}
-
-function stats(save){
-    save += '<div id="Stats">';
-    save += '<div class="progress">';
-    save += '<div id="bar_hunger"></div>';
-    save += '<div id="percent_hunger"> Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div >';
-    save += '</div>';
-    save += '<div class="progress">';
-    save += '<div id="bar_thirst"></div>';
-    save += '<div id="percent_thirst"> Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div >';
-    save += '</div>';
-    save += '<div class="progress">';
-    save += '<div id="bar_health"></div>';
-    save += '<div id="percent_health"> Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div >';
-    save += '</div>';
-    return save;
 }
 
 function levelFromExp(g_Exp) {
@@ -154,4 +149,4 @@ function timeConverter(UNIX_timestamp){
 }
 
 Start();
-//setInterval(() => Start(), 5000);
+setInterval(() => Start(), 5000);
