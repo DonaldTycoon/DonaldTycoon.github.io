@@ -74,10 +74,10 @@ function toHTML(info){
             document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
             document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
             document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
-            if (levelFromExp(Math.round(parseFloat(data.business.business)))>100) {
+            if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business)))>100) {
                 document.getElementById('bar_uncompleted')[0].style.width = '100%';
             } else {
-                document.getElementById('bar_uncompleted')[0].style.width = levelFromExp(Math.round(parseFloat(data.business.business))) + '%';
+                document.getElementById('bar_uncompleted')[0].style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business))) + '%';
             }
             resolve();
         }));
