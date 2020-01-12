@@ -73,7 +73,7 @@ function toHTML(info){
             resolve(write(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))));
         }))
         .then(new Promise(function(resolve, reject) {
-            setTimeout(function(){
+            //setTimeout(function(){
                 document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
                 document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
                 document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
@@ -211,7 +211,7 @@ function toHTML(info){
                     document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.trucking))) + '%';
                 }
                 resolve();
-            }, 1000);
+            //}, 1000);
         }));
         //hasCooldown(info.data.licenses.corp_cooldown);
     }
@@ -410,4 +410,4 @@ function timeConverter(UNIX_timestamp){
 }
 
 Start();
-//setInterval(() => Start(), 5000);
+setInterval(() => Start(), 5000);
