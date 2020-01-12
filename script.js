@@ -43,7 +43,7 @@ function Data(value) {
         toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
     })
     .catch(function(err) {
-        var fetchUrl = 'https://api.tycoon.community:30122/status/data/' + value;
+        var fetchUrl = 'https://api.tycoon.community:30123/status/data/' + value;
         fetch(fetchUrl)
         fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
@@ -51,18 +51,9 @@ function Data(value) {
             toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
         })
         .catch(function(err) {
-            var fetchUrl = 'https://api.tycoon.community:30123/status/data/' + value;
-            fetch(fetchUrl)
-            fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(html, "text/html");
-                toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
-            })
-            .catch(function(err) {
-                var save = document.getElementById('data').innerHTML;
-                save += 'Could not load Data';
-                document.getElementById('data').innerHTML = save;
-            });
+            var save = document.getElementById('data').innerHTML;
+            save += 'Could not load Data';
+            document.getElementById('data').innerHTML = save;
         });
     });
 
@@ -86,7 +77,6 @@ function toHTML(info){
         save +=     info.data.groups;
         save += '</div>';
 */
-
         //hasCooldown(info.data.licenses.corp_cooldown);
     }
     document.getElementById('data').innerHTML = save;
