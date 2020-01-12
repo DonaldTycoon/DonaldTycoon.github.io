@@ -222,6 +222,7 @@ function write(save) {
 }
 
 function getID(info, save){
+    save += '<div class="zoom">';
     save += '<div id="ID">';
     save +=     "ID: ";
     save +=     info.user_id;
@@ -366,6 +367,9 @@ function getSkills(data, save){
     save += '<div class="bar-two" id="bar_two_trucking"></div>';
     save += '<div id="percent_skills">Trucking | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + ' EXP)</i></div >';
     save += '</div></div>';
+
+
+    save += '</div>';
     return(save);
 }
 
