@@ -70,145 +70,145 @@ function toHTML(info){
             setTimeout(() => resolve(1), 500);
         })
         .then(new Promise(function(resolve, reject) {
-            resolve(write(getSkills(info.data.gaptitudes_v, getStats(info, getID(info, save)))));
+            resolve(write(getSkills(info.data, getStats(info, getID(info, save)))));
         }))
         .then(new Promise(function(resolve, reject) {
             //setTimeout(function(){
                 document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
                 document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
                 document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business, info.data.gaptitudes.business.business)))>=100) {
                     document.getElementById('bar_uncompleted_business').style.width = '100%';
                     document.getElementById('bar_uncompleted_business').style.background = '#e4c000';
                     document.getElementById('bar_two_business').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_business').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business))) + '%';
+                    document.getElementById('bar_uncompleted_business').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.business.business, info.data.gaptitudes.business.business)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.casino.casino)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.casino.casino, info.data.gaptitudes.casino.casino))))>=100) {
                     document.getElementById('bar_uncompleted_casino').style.width = '100%';
                     document.getElementById('bar_uncompleted_casino').style.background = '#e4c000';
                     document.getElementById('bar_two_casino').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_casino').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.casino.casino))) + '%';
+                    document.getElementById('bar_uncompleted_casino').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.casino.casino, info.data.gaptitudes.casino.casino)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.ems.ems)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.ems.ems, info.data.gaptitudes.ems.ems))))>=100) {
                     document.getElementById('bar_uncompleted_ems').style.width = '100%';
                     document.getElementById('bar_uncompleted_ems').style.background = '#e4c000';
                     document.getElementById('bar_two_ems').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_ems').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.ems.ems))) + '%';
+                    document.getElementById('bar_uncompleted_ems').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.ems.ems, info.data.gaptitudes.ems.ems)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.farming)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.farming, info.data.gaptitudes.farming.farming))))>=100) {
                     document.getElementById('bar_uncompleted_farming').style.width = '100%';
                     document.getElementById('bar_uncompleted_farming').style.background = '#e4c000';
                     document.getElementById('bar_two_farming').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_farming').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.farming))) + '%';
+                    document.getElementById('bar_uncompleted_farming').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.farming, info.data.gaptitudes.farming.farming)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.fishing)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.fishing, info.data.gaptitudes.farming.fishing))))>=100) {
                     document.getElementById('bar_uncompleted_fishing').style.width = '100%';
                     document.getElementById('bar_uncompleted_fishing').style.background = '#e4c000';
                     document.getElementById('bar_two_fishing').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_fishing').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.fishing))) + '%';
+                    document.getElementById('bar_uncompleted_fishing').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.fishing, info.data.gaptitudes.farming.fishing)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.mining)))>=50) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining))))>=50) {
                     document.getElementById('bar_uncompleted_mining').style.width = '100%';
                     document.getElementById('bar_uncompleted_mining').style.background = '#e4c000';
                     document.getElementById('bar_two_mining').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_mining').style.width = (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.farming.mining)))*2) + '%';
+                    document.getElementById('bar_uncompleted_mining').style.width = (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining))))*2) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.hunting.skill, info.data.gaptitudes.hunting.skill))))>=100) {
                     document.getElementById('bar_uncompleted_hunting').style.width = '100%';
                     document.getElementById('bar_uncompleted_hunting').style.background = '#e4c000';
                         document.getElementById('bar_two_hunting').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_hunting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.hunting.skill))) + '%';
+                    document.getElementById('bar_uncompleted_hunting').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.hunting.skill, info.data.gaptitudes.hunting.skill)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.physical.strength)))>=30) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength))))>=30) {
                     document.getElementById('bar_uncompleted_strenth').style.width = '100%';
                     document.getElementById('bar_uncompleted_strenth').style.background = '#e4c000';
                     document.getElementById('bar_two_strenth').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_strenth').style.width = (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.physical.strength)))*3.3) + '%';
+                    document.getElementById('bar_uncompleted_strenth').style.width = (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength))))*3.3) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.cargos)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.cargos, info.data.gaptitudes.piloting.cargos))))>=100) {
                     document.getElementById('bar_uncompleted_cargos').style.width = '100%';
                     document.getElementById('bar_uncompleted_cargos').style.background = '#e4c000';
                     document.getElementById('bar_two_cargos').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_cargos').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.cargos))) + '%';
+                    document.getElementById('bar_uncompleted_cargos').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.cargos, info.data.gaptitudes.piloting.cargos)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.heli)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.heli, info.data.gaptitudes.piloting.heli))))>=100) {
                     document.getElementById('bar_uncompleted_heli').style.width = '100%';
                     document.getElementById('bar_uncompleted_heli').style.background = '#e4c000';
                     document.getElementById('bar_two_heli').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_heli').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.heli))) + '%';
+                    document.getElementById('bar_uncompleted_heli').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.heli, info.data.gaptitudes.piloting.heli)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.piloting)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.piloting, info.data.gaptitudes.piloting.piloting))))>=100) {
                     document.getElementById('bar_uncompleted_piloting').style.width = '100%';
                     document.getElementById('bar_uncompleted_piloting').style.background = '#e4c000';
                     document.getElementById('bar_two_piloting').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_piloting').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.piloting.piloting))) + '%';
+                    document.getElementById('bar_uncompleted_piloting').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.piloting, info.data.gaptitudes.piloting.piloting)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.player)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.player, info.data.gaptitudes.player.player))))>=100) {
                     document.getElementById('bar_uncompleted_player').style.width = '100%';
                     document.getElementById('bar_uncompleted_player').style.background = '#e4c000';
                     document.getElementById('bar_two_player').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_player').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.player))) + '%';
+                    document.getElementById('bar_uncompleted_player').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.player, info.data.gaptitudes.player.player)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.racing)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.racing, info.data.gaptitudes.player.racing))))>=100) {
                     document.getElementById('bar_uncompleted_racing').style.width = '100%';
                     document.getElementById('bar_uncompleted_racing').style.background = '#e4c000';
                     document.getElementById('bar_two_racing').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_racing').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.player.racing))) + '%';
+                    document.getElementById('bar_uncompleted_racing').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.racing, info.data.gaptitudes.player.racing)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.bus)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.bus, info.data.gaptitudes.train.bus))))>=100) {
                     document.getElementById('bar_uncompleted_bus').style.width = '100%';
                     document.getElementById('bar_uncompleted_bus').style.background = '#e4c000';
                     document.getElementById('bar_two_bus').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_bus').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.bus))) + '%';
+                    document.getElementById('bar_uncompleted_bus').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.bus, info.data.gaptitudes.train.bus)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.train)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.train, info.data.gaptitudes.train.train))))>=100) {
                     document.getElementById('bar_uncompleted_train').style.width = '100%';
                     document.getElementById('bar_uncompleted_train').style.background = '#e4c000';
                     document.getElementById('bar_two_train').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_train').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.train.train))) + '%';
+                    document.getElementById('bar_uncompleted_train').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.train, info.data.gaptitudes.train.train)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.garbage)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.garbage, info.data.gaptitudes.trucking.garbage))))>=100) {
                     document.getElementById('bar_uncompleted_garbage').style.width = '100%';
                     document.getElementById('bar_uncompleted_garbage').style.background = '#e4c000';
                     document.getElementById('bar_two_garbage').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_garbage').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.garbage))) + '%';
+                    document.getElementById('bar_uncompleted_garbage').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.garbage, info.data.gaptitudes.trucking.garbage)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.mechanic)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.mechanic, info.data.gaptitudes.trucking.mechanic))))>=100) {
                     document.getElementById('bar_uncompleted_mechanic').style.width = '100%';
                     document.getElementById('bar_uncompleted_mechanic').style.background = '#e4c000';
                     document.getElementById('bar_two_mechanic').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_mechanic').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.mechanic))) + '%';
+                    document.getElementById('bar_uncompleted_mechanic').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.mechanic, info.data.gaptitudes.trucking.mechanic)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.postop)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.postop, info.data.gaptitudes.trucking.postop))))>=100) {
                     document.getElementById('bar_uncompleted_postop').style.width = '100%';
                     document.getElementById('bar_uncompleted_postop').style.background = '#e4c000';
                     document.getElementById('bar_two_postop').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_postop').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.postop))) + '%';
+                    document.getElementById('bar_uncompleted_postop').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.postop, info.data.gaptitudes.trucking.postop)))) + '%';
                 }
-                if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.trucking)))>=100) {
+                if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking))))>=100) {
                     document.getElementById('bar_uncompleted_trucking').style.width = '100%';
                     document.getElementById('bar_uncompleted_trucking').style.background = '#e4c000';
                     document.getElementById('bar_two_trucking').style.background = '#FFFFFF00';
                 } else {
-                    document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.trucking.trucking))) + '%';
+                    document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking)))) + '%';
                 }
                 resolve();
             //}, 1000);
@@ -257,116 +257,124 @@ function getSkills(data, save){
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_business"></div>';
     save += '<div class="bar-two" id="bar_two_business"></div>';
-    save += '<div id="percent_skills">Business | Level ' + levelFromExp(Math.round(parseFloat(data.business.business))) + '  / 100 <i>(' + Math.round(parseFloat(data.business.business)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Business | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.business.business, data.gaptitudes.business.business)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.business.business, data.gaptitudes.business.business))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div id="skill-title">Casino:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_casino"></div>';
     save += '<div class="bar-two" id="bar_two_casino"></div>';
-    save += '<div id="percent_skills">Casino | Level ' + levelFromExp(Math.round(parseFloat(data.casino.casino))) + '  / 100 <i>(' + Math.round(parseFloat(data.casino.casino)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Casino | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">EMS Level:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_ems"></div>';
     save += '<div class="bar-two" id="bar_two_ems"></div>';
-    save += '<div id="percent_skills">EMS | Level ' + levelFromExp(Math.round(parseFloat(data.ems.ems))) + '  / 100 <i>(' + Math.round(parseFloat(data.ems.ems)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">EMS | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.ems.ems, data.gaptitudes.ems.ems)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.ems.ems, data.gaptitudes.ems.ems))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Gathering Industries:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_mining"></div>';
     save += '<div class="bar-two" id="bar_two_mining"></div>';
-    save += '<div id="percent_skills">Mining | Level ' + levelFromExp(Math.round(parseFloat(data.farming.mining))) + '  / 50 <i>(' + Math.round(parseFloat(data.farming.mining)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Mining | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining)))) + '  / 50 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_farming"></div>';
     save += '<div class="bar-two" id="bar_two_farming"></div>';
-    save += '<div id="percent_skills">Farming | Level ' + levelFromExp(Math.round(parseFloat(data.farming.farming))) + '  / 100 <i>(' + Math.round(parseFloat(data.farming.farming)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Farming | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_fishing"></div>';
     save += '<div class="bar-two" id="bar_two_fishing"></div>';
-    save += '<div id="percent_skills">Fishing | Level ' + levelFromExp(Math.round(parseFloat(data.farming.fishing))) + '  / 100 <i>(' + Math.round(parseFloat(data.farming.fishing)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Fishing | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Hunting:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_hunting"></div>';
     save += '<div class="bar-two" id="bar_two_hunting"></div>';
-    save += '<div id="percent_skills">Hunting | Level ' + levelFromExp(Math.round(parseFloat(data.hunting.skill))) + '  / 100 <i>(' + Math.round(parseFloat(data.hunting.skill)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Hunting | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.hunting.skill, data.gaptitudes.hunting.skill)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.hunting.skill, data.gaptitudes.hunting.skill))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Physical:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_strenth"></div>';
     save += '<div class="bar-two" id="bar_two_strenth"></div>';
-    save += '<div id="percent_skills">Strength | Level ' + levelFromExp(Math.round(parseFloat(data.physical.strength))) + '  / 30 <i>(' + Math.round(parseFloat(data.physical.strength)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Strength | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.physical.strength, data.gaptitudes.physical.strength)))) + '  / 30 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.physical.strength, data.gaptitudes.physical.strength))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Piloting:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_cargos"></div>';
     save += '<div class="bar-two" id="bar_two_cargos"></div>';
-    save += '<div id="percent_skills">Cargo Pilot | Level ' + levelFromExp(Math.round(parseFloat(data.piloting.cargos))) + '  / 100 <i>(' + Math.round(parseFloat(data.piloting.cargos)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Cargo Pilot | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.cargos, data.gaptitudes.piloting.cargos)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.cargos, data.gaptitudes.piloting.cargos))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_heli"></div>';
     save += '<div class="bar-two" id="bar_two_heli"></div>';
-    save += '<div id="percent_skills">Helicopter Pilot | Level ' + levelFromExp(Math.round(parseFloat(data.piloting.heli))) + '  / 100 <i>(' + Math.round(parseFloat(data.piloting.heli)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Helicopter Pilot | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.heli, data.gaptitudes.piloting.heli)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.heli, data.gaptitudes.piloting.heli))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_piloting"></div>';
     save += '<div class="bar-two" id="bar_two_piloting""></div>';
-    save += '<div id="percent_skills">Airline Pilot | Level ' + levelFromExp(Math.round(parseFloat(data.piloting.piloting))) + '  / 100 <i>(' + Math.round(parseFloat(data.piloting.piloting)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Airline Pilot | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.piloting, data.gaptitudes.piloting.piloting)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.piloting, data.gaptitudes.piloting.piloting))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Gathering Industries:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_player"></div>';
     save += '<div class="bar-two" id="bar_two_player"></div>';
-    save += '<div id="percent_skills">Player | Level ' + levelFromExp(Math.round(parseFloat(data.player.player))) + '  / 100 <i>(' + Math.round(parseFloat(data.player.player)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Player | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.player.player, data.gaptitudes.player.player)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.player.player, data.gaptitudes.player.player))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_racing"></div>';
     save += '<div class="bar-two" id="bar_two_racing"></div>';
-    save += '<div id="percent_skills">Racing | Level ' + levelFromExp(Math.round(parseFloat(data.player.racing))) + '  / 100 <i>(' + Math.round(parseFloat(data.player.racing)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Racing | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.player.racing, data.gaptitudes.player.racing)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.player.racing, data.gaptitudes.player.racing))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Public Transport:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_bus"></div>';
     save += '<div class="bar-two" id="bar_two_bus"></div>';
-    save += '<div id="percent_skills">Bus Driver | Level ' + levelFromExp(Math.round(parseFloat(data.train.bus))) + '  / 100 <i>(' + Math.round(parseFloat(data.train.bus)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Bus Driver | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.train.bus,data.gaptitudes.train.bus)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.train.bus, data.gaptitudes.train.bus))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_train"></div>';
     save += '<div class="bar-two" id="bar_two_train"></div>';
-    save += '<div id="percent_skills">Conductor | Level ' + levelFromExp(Math.round(parseFloat(data.train.train))) + '  / 100 <i>(' + Math.round(parseFloat(data.train.train)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Conductor | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.train.train, data.gaptitudes.train.train)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.train.train, data.gaptitudes.train.train))) ' EXP)</i></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Trucking:</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_garbage"></div>';
     save += '<div class="bar-two" id="bar_two_garbage"></div>';
-    save += '<div id="percent_skills">Garbage Collections | Level ' + levelFromExp(Math.round(parseFloat(data.trucking.garbage))) + '  / 100 <i>(' + Math.round(parseFloat(data.trucking.garbage)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Garbage Collections | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.garbage, data.gaptitudes.trucking.garbage)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.garbage, data.gaptitudes.trucking.garbage))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_mechanic"></div>';
     save += '<div class="bar-two" id="bar_two_mechanic"></div>';
-    save += '<div id="percent_skills">Mechanic | Level ' + levelFromExp(Math.round(parseFloat(data.trucking.mechanic))) + '  / 100 <i>(' + Math.round(parseFloat(data.trucking.mechanic)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Mechanic | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.mechanic, data.gaptitudes.trucking.mechanic)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.mechanic, data.gaptitudes.trucking.mechanic))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_postop"></div>';
     save += '<div class="bar-two" id="bar_two_postop"></div>';
-    save += '<div id="percent_skills">PostOP | Level ' + levelFromExp(Math.round(parseFloat(data.trucking.postop))) + '  / 100 <i>(' + Math.round(parseFloat(data.trucking.postop)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">PostOP | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.postop, data.gaptitudes.trucking.postop)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.postop, data.gaptitudes.trucking.postop))) ' EXP)</i></div >';
     save += '</div>';
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_trucking"></div>';
     save += '<div class="bar-two" id="bar_two_trucking"></div>';
-    save += '<div id="percent_skills">Trucking | Level ' + levelFromExp(Math.round(parseFloat(data.trucking.trucking))) + '  / 100 <i>(' + Math.round(parseFloat(data.trucking.trucking)) + ' EXP)</i></div >';
+    save += '<div id="percent_skills">Trucking | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) ' EXP)</i></div >';
     save += '</div></div>';
     return(save);
+}
+
+function Choose(value, data) {
+    if (parseFloat(value) == 10) {
+        return  data;
+    } else {
+        return value;
+    }
 }
 
 function levelFromExp(g_Exp) {
