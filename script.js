@@ -230,6 +230,7 @@ function getStats(info, save){
 }
 
 function getSkills(data, save){
+    save += '<div id="Skills">';
     save += '<div id="title">Skills</div>';
     save += '<div id="skill-title">Business Level:</div>';
     save += '<div class="progress-two">';
@@ -343,7 +344,7 @@ function getSkills(data, save){
     save += '<div class="bar" id="bar_uncompleted_trucking"></div>';
     save += '<div class="bar-two" style="background-color: #0063CA4d"></div>';
     save += '<div id="percent_skills">Trucking | Level ' + levelFromExp(Math.round(parseFloat(data.trucking.trucking))) + '  / 100 <i>(' + Math.round(parseFloat(data.trucking.trucking)) + ' EXP)</i></div >';
-    save += '</div></div>';
+    save += '</div></div></div>';
     return(save);
 }
 
