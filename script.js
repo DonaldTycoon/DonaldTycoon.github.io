@@ -54,6 +54,7 @@ function Data(value) {
             var save = document.getElementById('data').innerHTML;
             save += 'Could not load Data';
             document.getElementById('data').innerHTML = save;
+            console.log(err);
         });
     });
 
