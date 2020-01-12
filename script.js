@@ -78,9 +78,9 @@ function toHTML(info){
                 document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
                 document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
                 if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business)))>=100) {
-                    document.getElementById('bar_uncompleted_bussiness').style.width = '100%';
+                    document.getElementById('bar_uncompleted_business').style.width = '100%';
                 } else {
-                    document.getElementById('bar_uncompleted_bussiness').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business))) + '%';
+                    document.getElementById('bar_uncompleted_business').style.width = levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business))) + '%';
                 }
                 if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.casino.casino)))>=100) {
                     document.getElementById('bar_uncompleted_casino').style.width = '100%';
