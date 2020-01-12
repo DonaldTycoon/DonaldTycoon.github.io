@@ -82,16 +82,16 @@ body {
     background-color:#002eac4d;
 }
 #bar_uncompleted{
-    background-color:#002eac;
+    background-color:#0063CA;
 }
 #bar_uncompleted_two{
-    background-color:#002eac4d;
+    background-color:#00264D;
 }
 #bar_completed{
-    background-color:#002eac;
+    background-color:#B39700;
 }
 #bar_completed_two{
-    background-color:#002eac4d;
+    background-color:#B39700;
 }
 
 #percent_stats{
