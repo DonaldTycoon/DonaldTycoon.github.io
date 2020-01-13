@@ -309,7 +309,7 @@ function inventory(save, value) {
                                   var list = tableToJson(table);
                                   list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                                   list.splice(0, 2);
-                                  save += Inventorytwo(list, save);
+                                  Inventorytwo(list, save);
                             })
                             .catch(function(err) {
                                   console.log('Failed to fetch page: ', err);
@@ -375,7 +375,6 @@ function Inventorytwo(array, save) {
             save += '</p>';
             save += '</div>';
       }
-      return save;
 }
 
 function levelFromExp(g_Exp) {
