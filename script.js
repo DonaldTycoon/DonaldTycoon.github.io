@@ -250,6 +250,7 @@ function getSkills(data, save){
 }
 
 function inventory(data, save) {
+    console.log(data);
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
     console.log(Object.keys(data.inventory)[0]);
@@ -268,7 +269,6 @@ function inventory(data, save) {
     }
     save += '</div>';
     save += '</div>';
-    console.log(data);
     return(save);
 }
 
