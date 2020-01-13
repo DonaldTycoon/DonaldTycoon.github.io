@@ -250,6 +250,8 @@ function getSkills(data, save){
 }
 
 function inventory(save, value) {
+    save += '<div id="Skills">';
+    save += '<div id="title">Inventory</div>';
     var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
     fetch(fetchUrl)
           .then(function(res){ return res.text()})
@@ -285,6 +287,7 @@ function inventory(save, value) {
           save += '</div>';
           document.getElementById('data').innerHTML = save;
     })
+    save += '</div>';
     save += '</div>';
     return(save);
 }
