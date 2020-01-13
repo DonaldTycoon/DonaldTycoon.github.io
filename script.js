@@ -256,6 +256,7 @@ function inventory(data, save) {
     var item = Object.keys(data.inventory)[0];
     console.log('data.inventory.' + item +'.amount');
     console.log(Object.keys('data.inventory.' + item +'.amount'));
+    console.log(data.inventory.group_card|fisher|Fisherman.amount)
     for (var i = 0; i < Object.keys(data.inventory).length; i++) {
         save += '<div id="item">';
         save += Object.keys(data.inventory)[i];
