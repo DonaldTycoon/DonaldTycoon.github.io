@@ -36,8 +36,10 @@ function Data(value) {
         value = 1;
     }
     var fetchUrl = 'https://api.tycoon.community:30120/status/data/' + value;
+    console.log(value);
     fetch(fetchUrl)
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
+        console.log(value);
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
         toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '').replace(/[\u007C]/gi, '-')), value);
