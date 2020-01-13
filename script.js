@@ -84,7 +84,7 @@ function toHTML(info){
             setTimeout(() => resolve(1), 500);
         })
         .then(new Promise(function(resolve, reject) {
-            resolve(write(getSkills(info.data, getStats(info, getID(info, save)))));
+            resolve(write(inventory(info.data ,getSkills(info.data, getStats(info, getID(info, save))))));
         }))
         .then(new Promise(function(resolve, reject) {
             design(info);
@@ -245,6 +245,14 @@ function getSkills(data, save){
     save += '<div id="percent_skills">Trucking | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + ' EXP)</i></div >';
     save += '</div></div>';
 
+
+    return(save);
+}
+
+function inventory(data, save) {
+    for (var i = 0; i < data.inventory.length; i++) {
+        save += data.inventory[i];
+    }
 
     save += '</div>';
     return(save);
