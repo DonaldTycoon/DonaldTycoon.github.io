@@ -40,7 +40,7 @@ function Data(value) {
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
-        toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '').replace(/[\u007C]/gi, '-')));
+        toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '').replace(/[\u007C]/gi, '-')), value);
     })
     .catch(function(err) {
         var fetchUrl = 'https://api.tycoon.community:30123/status/data/' + value;
@@ -48,7 +48,7 @@ function Data(value) {
         fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
-            toHTML(JSON.parse((doc.body.innerHTML.replace(/[|<\/?[^>]+>]/gi, '')).replace(/[\u007C]/gi, '-')));
+            toHTML(JSON.parse((doc.body.innerHTML.replace(/[|<\/?[^>]+>]/gi, '')).replace(/[\u007C]/gi, '-')), value);
         })
         .catch(function(err) {
             var save = document.getElementById('data').innerHTML;
@@ -74,7 +74,7 @@ function sorting(array) {
       return data;
 }
 
-function toHTML(info){
+function toHTML(info, value){
     document.getElementById('data').innerHTML = '';
     var save = document.getElementById('data').innerHTML;
     if (info.user_id == null) {
@@ -84,7 +84,7 @@ function toHTML(info){
             setTimeout(() => resolve(1), 500);
         })
         .then(new Promise(function(resolve, reject) {
-            resolve(write(inventory(info.data ,getSkills(info.data, getStats(info, getID(info, save))))));
+            resolve(write(inventory(getSkills(info.data, getStats(info, getID(info, save)))), value));
         }))
         .then(new Promise(function(resolve, reject) {
             design(info);
@@ -249,8 +249,42 @@ function getSkills(data, save){
     return(save);
 }
 
-function inventory(data, save) {
-
+function inventory(save, value) {
+    var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
+    fetch(fetchUrl)
+          .then(function(res){ return res.text()})
+          .then(function(html) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, "text/html");
+                var table = doc.getElementsByTagName('table')[0];
+                var list = tableToJson(table);
+                list.sort(function(a, b) {return a.item.localeCompare(b.item);});
+                list2 = list.slice(2);
+                save += Inventorytwo(list2);
+                resolve(list2);
+                if (list2 != "") {
+                      lade.push(JSON.stringify(list2));
+                      localStorage.setItem('list', JSON.stringify(lade));
+                      var active = (parseInt(localStorage.getItem('Active')));
+                      active++;
+                      localStorage.setItem('Active', active);
+                } else {
+                      var inactive = (parseInt(localStorage.getItem('Inactive')));
+                      inactive++;
+                      localStorage.setItem('Inactive', inactive);
+                }
+          })
+    .catch(function(err) {
+          console.log('Failed to fetch page: ', err);
+          document.getElementById('data').innerHTML = '<div id="data"></div>';
+          var save = document.getElementById('data').innerHTML;
+          save += '<div>';
+          save += '<p>';
+          save += 'Couldnt load Inventory';
+          save += '</p>';
+          save += '</div>';
+          document.getElementById('data').innerHTML = save;
+    })
     save += '</div>';
     return(save);
 }
@@ -261,6 +295,85 @@ function Choose(value, data) {
     } else {
         return value;
     }
+}
+
+function sorting(array) {
+      var itemlist = [];
+      for (var i=0; i<array.length;i++) {
+            if (contains(itemlist, array[i].item)) {
+                  var amount = parseInt(data[contains2(itemlist, array[i].item)].amount);
+                  amount += parseInt(array[i].amount);
+                  itemlist[contains2(data, array[i].item)].amount = amount;
+            } else {
+                  itemlist.push(array[i]);
+            }
+      }
+      return itemlist;
+}
+
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i].item === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function contains2(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i].item === obj) {
+            return i;
+        }
+    }
+    return false;
+}
+
+function tableToJson(table) {
+      var data = [];
+      var headers = [];
+      for (var i=0; i<table.rows[0].cells.length; i++) {
+            headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi,'');
+      }
+
+      for (var i=1; i<table.rows.length; i++) {
+
+            var tableRow = table.rows[i];
+            var rowData = {};
+
+            for (var j=0; j<tableRow.cells.length; j++) {
+
+            rowData[ headers[j] ] = tableRow.cells[j].innerHTML;
+
+            }
+            if (data.indexOf(rowData) === -1) {
+                  data.push(rowData);
+            }
+      }
+
+    return data;
+}
+
+function Inventorytwo(array, save){
+      for (var i=1; i<array.length; i++) {
+            save += '<div>';
+            save += '<div class="amount">';
+            save += array[i].amount;
+            save += '</div>';
+            save += '<div class="item">';
+            save += array[i].item;
+            save += '</br>';
+            save += '</div>';
+            save += '</div>';
+      }
+      if (array.length <= 0){
+            save += '<div>';
+            save += '<p>';
+            save += 'Inventory Empty';
+            save += '</p>';
+            save += '</div>';
+      }
+      return save;
 }
 
 function levelFromExp(g_Exp) {
