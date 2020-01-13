@@ -268,6 +268,7 @@ function inventory(data, save) {
     }
     save += '</div>';
     save += '</div>';
+    console.log(data);
     return(save);
 }
 
