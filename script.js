@@ -321,7 +321,9 @@ function inventory(save, value) {
     save += '</div>';
     save += '</div>';
     console.log(save);
-    return(save);
+    setTimeout(function(){
+        return(save);
+    }, 1000);
 }
 
 function Choose(value, data) {
