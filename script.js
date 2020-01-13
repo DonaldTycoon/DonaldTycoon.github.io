@@ -250,26 +250,7 @@ function getSkills(data, save){
 }
 
 function inventory(data, save) {
-    console.log(data);
-    save += '<div id="Inventory">';
-    save += '<div id="title">Inventory</div>';
-    console.log(Object.keys(data.inventory)[0]);
-    //console.log(Object.keys(data.inventory)[0].amount);
-    var item = Object.keys(data.inventory)[0];
-    var amount = data.inventory.Object.keys(data.inventory)[0].amount;
-    //console.log(amount);
-    console.log(Object.keys('data.inventory.' + item + '.amount'));
-    console.log(data.inventory.group_cardfisherFisherman.amount)
-    for (var i = 0; i < Object.keys(data.inventory).length; i++) {
-        save += '<div id="item">';
-        save += Object.keys(data.inventory)[i];
-        save += '</div>';
-        var item = Object.keys(data.inventory)[i];
-        save += '<div id="amount">';
-        save += Object.keys('data.inventory.' + item +'.amount')[i];
-        save += '</div>';
-    }
-    save += '</div>';
+
     save += '</div>';
     return(save);
 }
