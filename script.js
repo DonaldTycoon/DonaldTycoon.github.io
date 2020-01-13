@@ -77,6 +77,7 @@ function sorting(array) {
 }
 
 function toHTML(info, value){
+    console.log(value);
     document.getElementById('data').innerHTML = '';
     var save = document.getElementById('data').innerHTML;
     if (info.user_id == null) {
@@ -86,6 +87,7 @@ function toHTML(info, value){
             setTimeout(() => resolve(1), 500);
         })
         .then(new Promise(function(resolve, reject) {
+            console.log(value);
             resolve(write(inventory(getSkills(info.data, getStats(info, getID(info, save)))), value));
         }))
         .then(new Promise(function(resolve, reject) {
@@ -252,12 +254,14 @@ function getSkills(data, save){
 }
 
 function inventory(save, value) {
+    console.log(value);
     save += '<div id="Skills">';
     save += '<div id="title">Inventory</div>';
     var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
     fetch(fetchUrl)
           .then(function(res){ return res.text()})
           .then(function(html) {
+                console.log(value);
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(html, "text/html");
                 var table = doc.getElementsByTagName('table')[0];
