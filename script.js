@@ -422,6 +422,7 @@ function timeConverter(UNIX_timestamp){
 }
 
 function design(info) {
+    setTimeout(function(){
     document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
     document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
     document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
@@ -558,6 +559,7 @@ function design(info) {
     } else {
         document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking)))) + '%';
     }
+    }, 1000);
 }
 
 Start();
