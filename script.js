@@ -88,7 +88,7 @@ function toHTML(info, value){
                 setTimeout(function(){
                     inventory(getSkills(info.data, getStats(info, getID(info, save))), value)
                 }, 3000);
-            );
+            ));
         }))
         .then(new Promise(function(resolve, reject) {
         console.log(save);
