@@ -288,7 +288,7 @@ function percentage(g_Exp) {
             console.log(data[i]- data[i-1]);
             console.log(g_Exp - data[i-1]);
             console.log(((data[i]- data[i-1])/(g_Exp - data[i-1]))*100);
-            return ((data[i]- data[i-1])/(g_Exp - data[i-1]))*100;
+            return ((g_Exp - data[i-1])/(data[i]- data[i-1]))*100;
         }
     }
 }
