@@ -88,7 +88,7 @@ function toHTML(info, value){
                 console.log(save);
                     inventory(getSkills(info.data, getStats(info, getID(info, save))), value)
                 setTimeout(function(){
-                    resolve();
+                    resolve(save);
                 }, 3000)
             })));
         }))
