@@ -259,7 +259,6 @@ function inventory(save, value) {
           var doc = parser.parseFromString(html, "text/html");
           var table = doc.getElementsByTagName('table')[0];
           var list = tableToJson(table);
-          console.log(list);
           list.sort(function(a, b) {return a.item.localeCompare(b.item);});
           list.splice(0, 2);
           save += Inventorytwo(list, save);
@@ -272,7 +271,6 @@ function inventory(save, value) {
                 var doc = parser.parseFromString(html, "text/html");
                 var table = doc.getElementsByTagName('table')[0];
                 var list = tableToJson(table);
-                console.log(list);
                 list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                 list.splice(0, 2);
                 save += Inventorytwo(list, save);
@@ -285,7 +283,6 @@ function inventory(save, value) {
                       var doc = parser.parseFromString(html, "text/html");
                       var table = doc.getElementsByTagName('table')[0];
                       var list = tableToJson(table);
-                      console.log(list);
                       list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                       list.splice(0, 2);
                       save += Inventorytwo(list, save);
@@ -298,7 +295,6 @@ function inventory(save, value) {
                             var doc = parser.parseFromString(html, "text/html");
                             var table = doc.getElementsByTagName('table')[0];
                             var list = tableToJson(table);
-                            console.log(list);
                             list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                             list.splice(0, 2);
                             save += Inventorytwo(list, save);
@@ -311,7 +307,6 @@ function inventory(save, value) {
                                   var doc = parser.parseFromString(html, "text/html");
                                   var table = doc.getElementsByTagName('table')[0];
                                   var list = tableToJson(table);
-                                  console.log(list);
                                   list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                                   list.splice(0, 2);
                                   save += Inventorytwo(list, save);
