@@ -280,14 +280,12 @@ function inventory(save, value) {
           })
     .catch(function(err) {
           console.log('Failed to fetch page: ', err);
-          document.getElementById('data').innerHTML = '<div id="data"></div>';
           var save = document.getElementById('data').innerHTML;
           save += '<div>';
           save += '<p>';
           save += 'Couldnt load Inventory';
           save += '</p>';
           save += '</div>';
-          document.getElementById('data').innerHTML = save;
     })
     save += '</div>';
     save += '</div>';
