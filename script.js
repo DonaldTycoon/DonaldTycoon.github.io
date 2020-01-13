@@ -448,4 +448,4 @@ function design(info) {
 }
 
 Start();
-setInterval(() => Start(), 5000);
+//setInterval(() => Start(), 5000);
