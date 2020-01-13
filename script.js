@@ -318,6 +318,7 @@ function inventory(save, value) {
                 });
           });
     });
+    console.log(list);
     save += '</div>';
     save += '</div>';
     console.log(save);
