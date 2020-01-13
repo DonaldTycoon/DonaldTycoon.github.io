@@ -256,6 +256,8 @@ function inventory(data, save) {
     console.log(JSON.stringify(data.inventory)[0]);
     console.log(JSON.stringify(data.inventory[0]));
     console.log(data.inventory[0]);
+    console.log(data.inventory[1]);
+    console.log(data.inventory[2]);
     for (var i = 0; i < Object.keys(data.inventory).length; i++) {
         save += '<div id="item">';
         save += JSON.stringify(data.inventory)[i];
