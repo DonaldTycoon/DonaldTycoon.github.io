@@ -252,15 +252,9 @@ function getSkills(data, save){
 function inventory(data, save) {
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
-    console.log(Object.keys(data.inventory).length);
-    console.log(JSON.stringify(data.inventory)[0]);
-    console.log(JSON.stringify(data.inventory[0]));
-    console.log(Object.keys(data.inventory)[0]);
-    console.log(Object.keys(data.inventory[0]));
-    console.log(data.inventory[2]);
     for (var i = 0; i < Object.keys(data.inventory).length; i++) {
         save += '<div id="item">';
-        save += JSON.stringify(data.inventory)[i];
+        save += Object.keys(data.inventory)[i];
         save += '</div>';
     }
     save += '</div>';
