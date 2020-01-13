@@ -320,6 +320,7 @@ function inventory(save, value) {
     });
     save += '</div>';
     save += '</div>';
+    console.log(save);
     return(save);
 }
 
@@ -332,7 +333,7 @@ function Choose(value, data) {
 }
 
 function tableToJson(table) {
-      var data = [];
+      var inventorylist = [];
       var headers = [];
       for (var i=0; i<table.rows[0].cells.length; i++) {
             headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi,'');
@@ -348,12 +349,12 @@ function tableToJson(table) {
             rowData[ headers[j] ] = tableRow.cells[j].innerHTML;
 
             }
-            if (data.indexOf(rowData) === -1) {
-                  data.push(rowData);
+            if (inventorylist.indexOf(rowData) === -1) {
+                  inventorylist.push(rowData);
             }
       }
 
-    return data;
+    return inventorylist;
 }
 
 function Inventorytwo(array, save) {
@@ -375,6 +376,7 @@ function Inventorytwo(array, save) {
             save += '</p>';
             save += '</div>';
       }
+      console.log(save);
 }
 
 function levelFromExp(g_Exp) {
