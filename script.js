@@ -255,7 +255,7 @@ function getSkills(data, save){
 
 function inventory(save, value) {
     console.log(value);
-    save += '<div id="Skills">';
+    save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
     var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
     fetch(fetchUrl)
