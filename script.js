@@ -86,9 +86,8 @@ function toHTML(info, value){
         .then(new Promise(function(resolve, reject) {
             resolve(write(
                 setTimeout(function(){
-                    inventory(getSkills(info.data, getStats(info, getID(info, save))), value))
+                    inventory(getSkills(info.data, getStats(info, getID(info, save))), value)
                 }, 3000);
-
             );
         }))
         .then(new Promise(function(resolve, reject) {
