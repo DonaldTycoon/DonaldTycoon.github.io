@@ -254,7 +254,7 @@ function inventory(data, save) {
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
     console.log(Object.keys(data.inventory)[0]);
-    console.log(Object.keys(data.inventory)[0].amount);
+    console.log(Object.keys(Object.keys(data.inventory)[0].amount)[0]);
     var item = Object.keys(data.inventory)[0];
     //var amount = data.inventory. + item + .amount;
     //console.log(amount);
