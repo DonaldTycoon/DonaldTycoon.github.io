@@ -95,6 +95,7 @@ function toHTML(info, value){
 }
 
 function write(save) {
+console.log(save);
     document.getElementById('data').innerHTML = save;
 }
 
