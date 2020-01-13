@@ -88,7 +88,7 @@ function toHTML(info, value){
         })
         .then(new Promise(function(resolve, reject) {
             console.log(value);
-            resolve(write(inventory(getSkills(info.data, getStats(info, getID(info, save)))), value));
+            resolve(write(inventory(getSkills(info.data, getStats(info, getID(info, save))), value)));
         }))
         .then(new Promise(function(resolve, reject) {
             design(info);
