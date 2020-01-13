@@ -323,7 +323,7 @@ function inventory(save, value) {
     console.log(save);
     setTimeout(function(){
         return(save);
-    }, 1000);
+    }, 2000);
 }
 
 function Choose(value, data) {
@@ -559,7 +559,7 @@ function design(info) {
     } else {
         document.getElementById('bar_uncompleted_trucking').style.width = levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking)))) + '%';
     }
-    }, 1000);
+}, 3000);
 }
 
 Start();
