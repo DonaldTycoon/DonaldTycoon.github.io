@@ -252,7 +252,7 @@ function getSkills(data, save){
 function inventory(save, value) {
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
-    var fetchUrl = 'http://api.tycoon.community:30120/status/inventory/' + value;
+    var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
     fetch(fetchUrl)
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
           var parser = new DOMParser();
@@ -265,7 +265,7 @@ function inventory(save, value) {
           save += Inventorytwo(list, save);
     })
     .catch(function(err) {
-          var fetchUrl = 'http://api.tycoon.community:30122/status/inventory/' + value;
+          var fetchUrl = 'https://api.tycoon.community:30122/status/inventory/' + value;
           fetch(fetchUrl)
           fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                 var parser = new DOMParser();
@@ -278,7 +278,7 @@ function inventory(save, value) {
                 save += Inventorytwo(list, save);
           })
           .catch(function(err) {
-                var fetchUrl = 'http://api.tycoon.community:30123/status/inventory/' + value;
+                var fetchUrl = 'https://api.tycoon.community:30123/status/inventory/' + value;
                 fetch(fetchUrl)
                 fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                       var parser = new DOMParser();
@@ -291,7 +291,7 @@ function inventory(save, value) {
                       save += Inventorytwo(list, save);
                 })
                 .catch(function(err) {
-                      var fetchUrl = 'http://api.tycoon.community:30124/status/inventory/' + value;
+                      var fetchUrl = 'https://api.tycoon.community:30124/status/inventory/' + value;
                       fetch(fetchUrl)
                       fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                             var parser = new DOMParser();
@@ -304,7 +304,7 @@ function inventory(save, value) {
                             save += Inventorytwo(list, save);
                       })
                       .catch(function(err) {
-                            var fetchUrl = 'http://api.tycoon.community:30125/status/inventory/' + value;
+                            var fetchUrl = 'https://api.tycoon.community:30125/status/inventory/' + value;
                             fetch(fetchUrl)
                             fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                                   var parser = new DOMParser();
@@ -361,7 +361,7 @@ function tableToJson(table) {
     return data;
 }
 
-function Inventorytwo(array, save){
+function Inventorytwo(array, save) {
       for (var i=1; i<array.length; i++) {
             save += '<div>';
             save += '<div class="amount">';
