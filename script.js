@@ -261,7 +261,7 @@ function inventory(save, value) {
           var list = tableToJson(table);
           list.sort(function(a, b) {return a.item.localeCompare(b.item);});
           list.splice(0, 2);
-          Inventorytwo(list, save);
+          save += Inventorytwo(list, save);
     })
     .catch(function(err) {
           var fetchUrl = 'https://api.tycoon.community:30122/status/inventory/' + value;
@@ -273,7 +273,7 @@ function inventory(save, value) {
                 var list = tableToJson(table);
                 list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                 list.splice(0, 2);
-                Inventorytwo(list, save);
+                save += Inventorytwo(list, save);
           })
           .catch(function(err) {
                 var fetchUrl = 'https://api.tycoon.community:30123/status/inventory/' + value;
@@ -285,7 +285,7 @@ function inventory(save, value) {
                       var list = tableToJson(table);
                       list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                       list.splice(0, 2);
-                      Inventorytwo(list, save);
+                      save += Inventorytwo(list, save);
                 })
                 .catch(function(err) {
                       var fetchUrl = 'https://api.tycoon.community:30124/status/inventory/' + value;
@@ -297,7 +297,7 @@ function inventory(save, value) {
                             var list = tableToJson(table);
                             list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                             list.splice(0, 2);
-                            Inventorytwo(list, save);
+                            save += Inventorytwo(list, save);
                       })
                       .catch(function(err) {
                             var fetchUrl = 'https://api.tycoon.community:30125/status/inventory/' + value;
@@ -309,7 +309,7 @@ function inventory(save, value) {
                                   var list = tableToJson(table);
                                   list.sort(function(a, b) {return a.item.localeCompare(b.item);});
                                   list.splice(0, 2);
-                                  Inventorytwo(list, save);
+                                  save += Inventorytwo(list, save);
                             })
                             .catch(function(err) {
                                   console.log('Failed to fetch page: ', err);
@@ -378,7 +378,7 @@ function Inventorytwo(array, save) {
             save += '</p>';
             save += '</div>';
       }
-      console.log(save);
+      return save;
 }
 
 function levelFromExp(g_Exp) {
