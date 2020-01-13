@@ -87,7 +87,7 @@ function toHTML(info){
             resolve(write(getSkills(info.data, getStats(info, getID(info, save)))));
         }))
         .then(new Promise(function(resolve, reject) {
-            design();
+            design(info);
             resolve();
         }));
         //hasCooldown(info.data.licenses.corp_cooldown);
@@ -298,7 +298,7 @@ function timeConverter(UNIX_timestamp){
     return time;
 }
 
-function design() {
+function design(info) {
     document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
     document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
     document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
