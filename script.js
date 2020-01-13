@@ -99,6 +99,7 @@ function write(save) {
 }
 
 function getID(info, save){
+console.log(save);
     save += '<div class="zoom">';
     save += '<div id="ID">';
     save +=     "ID: ";
@@ -108,6 +109,7 @@ function getID(info, save){
 }
 
 function getStats(info, save){
+console.log(save);
     save += '<div id="stats">';
     save += '<div id="title">Stats</div>';
     save += '<div class="progress">';
@@ -129,6 +131,7 @@ function getStats(info, save){
 }
 
 function getSkills(data, save){
+console.log(save);
     save += '<div id="Skills">';
     save += '<div id="title">Skills</div>';
     save += '<div id="skill-title">Business Level:</div>';
@@ -250,6 +253,7 @@ function getSkills(data, save){
 }
 
 function inventory(save, value) {
+console.log(save);
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
     var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
@@ -318,41 +322,6 @@ function inventory(save, value) {
                 });
           });
     });
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
-    console.log(save);
     save += '</div>';
     save += '</div>';
     console.log(save);
