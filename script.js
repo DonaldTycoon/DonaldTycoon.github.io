@@ -283,7 +283,7 @@ function percentage(g_Exp) {
     for (var i = 0; i < data.length; i++) {
         if (parseInt(data[i])>g_Exp) {
             console.log(data[i]);
-            console.loglog(data[i-2]);
+            console.log(data[i-2]);
             console.log(data[i]- data[i-2]);
             console.log(g_Exp - data[i-2]);
             console.log(((data[i]- data[i-2])/(g_Exp - data[i-2]))*100);
