@@ -256,8 +256,9 @@ function inventory(data, save) {
         save += '<div id="item">';
         save += Object.keys(data.inventory)[i];
         save += '</div>';
+        var item = Object.keys(data.inventory)[i];
         save += '<div id="amount">';
-        save += Object.keys(Object.keys(data.inventory)[i].amount)[i];
+        save += Object.keys('data.inventory.' + item +'.amount')[i];
         save += '</div>';
     }
     save += '</div>';
