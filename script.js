@@ -40,7 +40,7 @@ function Data(value) {
     fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
-        toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
+        toHTML(JSON.parse(doc.body.innerHTML.replace(/[|<\/?[^>]+>]/gi, '')));
     })
     .catch(function(err) {
         var fetchUrl = 'https://api.tycoon.community:30123/status/data/' + value;
@@ -48,7 +48,7 @@ function Data(value) {
         fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
-            toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')));
+            toHTML(JSON.parse(doc.body.innerHTML.replace(/[|<\/?[^>]+>]/gi, '')));
         })
         .catch(function(err) {
             var save = document.getElementById('data').innerHTML;
