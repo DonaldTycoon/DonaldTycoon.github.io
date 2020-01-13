@@ -90,7 +90,7 @@ function toHTML(info, value){
                 setTimeout(function(){
                     resolve();
                 }, 3000)
-            }));
+            })));
         }))
         .then(new Promise(function(resolve, reject) {
         console.log(save);
