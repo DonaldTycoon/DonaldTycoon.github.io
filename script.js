@@ -250,10 +250,12 @@ function getSkills(data, save){
 }
 
 function inventory(data, save) {
+    save += '<div id="Inventory">';
+    save += '<div id="title">Inventory</div>';
     for (var i = 0; i < data.inventory.length; i++) {
         save += data.inventory[i];
     }
-
+    save += '</div>';
     save += '</div>';
     return(save);
 }
