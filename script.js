@@ -252,39 +252,77 @@ function getSkills(data, save){
 function inventory(save, value) {
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
-    var fetchUrl = 'https://api.tycoon.community:30120/status/inventory/' + value;
+    var fetchUrl = 'http://api.tycoon.community:30120/status/inventory/' + value;
     fetch(fetchUrl)
-          .then(function(res){ return res.text()})
-          .then(function(html) {
+    fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, "text/html");
+          var table = doc.getElementsByTagName('table')[0];
+          var list = tableToJson(table);
+          console.log(list);
+          list.sort(function(a, b) {return a.item.localeCompare(b.item);});
+          list.splice(0, 2);
+          save += Inventorytwo(list, save);
+    })
+    .catch(function(err) {
+          var fetchUrl = 'http://api.tycoon.community:30122/status/inventory/' + value;
+          fetch(fetchUrl)
+          fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(html, "text/html");
                 var table = doc.getElementsByTagName('table')[0];
                 var list = tableToJson(table);
+                console.log(list);
                 list.sort(function(a, b) {return a.item.localeCompare(b.item);});
-                list2 = list.slice(2);
-                save += Inventorytwo(list2);
-                resolve(list2);
-                if (list2 != "") {
-                      lade.push(JSON.stringify(list2));
-                      localStorage.setItem('list', JSON.stringify(lade));
-                      var active = (parseInt(localStorage.getItem('Active')));
-                      active++;
-                      localStorage.setItem('Active', active);
-                } else {
-                      var inactive = (parseInt(localStorage.getItem('Inactive')));
-                      inactive++;
-                      localStorage.setItem('Inactive', inactive);
-                }
+                list.splice(0, 2);
+                save += Inventorytwo(list, save);
           })
-    .catch(function(err) {
-          console.log('Failed to fetch page: ', err);
-          var save = document.getElementById('data').innerHTML;
-          save += '<div>';
-          save += '<p>';
-          save += 'Couldnt load Inventory';
-          save += '</p>';
-          save += '</div>';
-    })
+          .catch(function(err) {
+                var fetchUrl = 'http://api.tycoon.community:30123/status/inventory/' + value;
+                fetch(fetchUrl)
+                fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
+                      var parser = new DOMParser();
+                      var doc = parser.parseFromString(html, "text/html");
+                      var table = doc.getElementsByTagName('table')[0];
+                      var list = tableToJson(table);
+                      console.log(list);
+                      list.sort(function(a, b) {return a.item.localeCompare(b.item);});
+                      list.splice(0, 2);
+                      save += Inventorytwo(list, save);
+                })
+                .catch(function(err) {
+                      var fetchUrl = 'http://api.tycoon.community:30124/status/inventory/' + value;
+                      fetch(fetchUrl)
+                      fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
+                            var parser = new DOMParser();
+                            var doc = parser.parseFromString(html, "text/html");
+                            var table = doc.getElementsByTagName('table')[0];
+                            var list = tableToJson(table);
+                            console.log(list);
+                            list.sort(function(a, b) {return a.item.localeCompare(b.item);});
+                            list.splice(0, 2);
+                            save += Inventorytwo(list, save);
+                      })
+                      .catch(function(err) {
+                            var fetchUrl = 'http://api.tycoon.community:30125/status/inventory/' + value;
+                            fetch(fetchUrl)
+                            fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
+                                  var parser = new DOMParser();
+                                  var doc = parser.parseFromString(html, "text/html");
+                                  var table = doc.getElementsByTagName('table')[0];
+                                  var list = tableToJson(table);
+                                  console.log(list);
+                                  list.sort(function(a, b) {return a.item.localeCompare(b.item);});
+                                  list.splice(0, 2);
+                                  save += Inventorytwo(list, save);
+                            })
+                            .catch(function(err) {
+                                  console.log('Failed to fetch page: ', err);
+                            });
+                      });
+                });
+          });
+    });
     save += '</div>';
     save += '</div>';
     return(save);
@@ -296,38 +334,6 @@ function Choose(value, data) {
     } else {
         return value;
     }
-}
-
-function sorting(array) {
-      var itemlist = [];
-      for (var i=0; i<array.length;i++) {
-            if (contains(itemlist, array[i].item)) {
-                  var amount = parseInt(data[contains2(itemlist, array[i].item)].amount);
-                  amount += parseInt(array[i].amount);
-                  itemlist[contains2(data, array[i].item)].amount = amount;
-            } else {
-                  itemlist.push(array[i]);
-            }
-      }
-      return itemlist;
-}
-
-function contains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i].item === obj) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function contains2(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i].item === obj) {
-            return i;
-        }
-    }
-    return false;
 }
 
 function tableToJson(table) {
