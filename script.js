@@ -254,7 +254,7 @@ function inventory(data, save) {
     save += '<div id="title">Inventory</div>';
     console.log();
     for (var i = 0; i < Object.keys(data.inventory).length; i++) {
-        save += data.inventory[i];
+        save += JSON.stringify(data.inventory[i]);
     }
     save += '</div>';
     save += '</div>';
