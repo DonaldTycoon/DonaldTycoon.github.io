@@ -84,7 +84,12 @@ function toHTML(info, value){
             setTimeout(() => resolve(1), 500);
         })
         .then(new Promise(function(resolve, reject) {
-            resolve(write(inventory(getSkills(info.data, getStats(info, getID(info, save))), value)));
+            resolve(write(
+                setTimeout(function(){
+                    inventory(getSkills(info.data, getStats(info, getID(info, save))), value))
+                }, 3000);
+
+            );
         }))
         .then(new Promise(function(resolve, reject) {
         console.log(save);
