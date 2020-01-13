@@ -253,7 +253,7 @@ function inventory(data, save) {
     save += '<div id="Inventory">';
     save += '<div id="title">Inventory</div>';
     console.log();
-    for (var i = 0; i < data.inventory.length; i++) {
+    for (var i = 0; i < data.inventory.size(); i++) {
         save += data.inventory[i];
     }
     save += '</div>';
