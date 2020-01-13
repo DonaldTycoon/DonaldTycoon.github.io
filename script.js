@@ -371,25 +371,26 @@ function tableToJson(table) {
 }
 
 function Inventorytwo(array, save) {
+    var items = '';
       for (var i=1; i<array.length; i++) {
-            save += '<div>';
-            save += '<div class="amount">';
-            save += array[i].amount;
-            save += '</div>';
-            save += '<div class="item">';
-            save += array[i].item;
-            save += '</br>';
-            save += '</div>';
-            save += '</div>';
+            items += '<div>';
+            items += '<div class="amount">';
+            items += array[i].amount;
+            items += '</div>';
+            items += '<div class="item">';
+            items += array[i].item;
+            items += '</br>';
+            items += '</div>';
+            items += '</div>';
       }
       if (array.length <= 0){
-            save += '<div>';
-            save += '<p>';
-            save += 'Inventory Empty';
-            save += '</p>';
-            save += '</div>';
+            items += '<div>';
+            items += '<p>';
+            items += 'Inventory Empty';
+            items += '</p>';
+            items += '</div>';
       }
-      return save;
+      return items;
 }
 
 function levelFromExp(g_Exp) {
