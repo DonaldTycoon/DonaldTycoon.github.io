@@ -99,7 +99,6 @@ function write(save) {
 }
 
 function getID(info, save){
-    save += '<div class="zoom">';
     save += '<div id="ID">';
     save +=     "ID: ";
     save +=     info.user_id;
@@ -253,7 +252,6 @@ function inventory(data, save) {
     save += '<div id="Inventory">';
 
 
-    save += '</div>';
     save += '</div>';
     return(save);
 }
