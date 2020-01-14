@@ -156,12 +156,21 @@ body {
     display:inline-block;
     top:1.2px;
     margin: .5%;
-    left:40%;
+    left:50%;
 }
+#percent_statstwo{
+    position:relative;
+    left:-50%;
+}
+
 #percent_skills {
     position:absolute;
     display:inline-block;
     top:-1.8px;
     margin: .5%;
-    left:40%;
+    left:50%;
+}
+#percent_skillstwo {
+    position:relative;
+    left:-50%;
 }
