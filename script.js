@@ -458,6 +458,14 @@ function design(info) {
     } else {
         document.getElementById('bar_uncompleted_trucking').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking)))) + '%';
     }
+    var combined = Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.postop, data.gaptitudes.trucking.postop))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.mechanic, data.gaptitudes.trucking.mechanic))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.garbage, data.gaptitudes.trucking.garbage))) + Math.round(parseFloat(Choose(data.gaptitudes_v.train.train, data.gaptitudes.train.train))) + Math.round(parseFloat(Choose(data.gaptitudes_v.train.bus,data.gaptitudes.train.bus))) + Math.round(parseFloat(Choose(data.gaptitudes_v.player.racing, data.gaptitudes.player.racing))) + Math.round(parseFloat(Choose(data.gaptitudes_v.player.player, data.gaptitudes.player.player))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.piloting, data.gaptitudes.piloting.piloting))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.heli, data.gaptitudes.piloting.heli))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.cargos, data.gaptitudes.piloting.cargos))) + Math.round(parseFloat(Choose(data.gaptitudes_v.physical.strength, data.gaptitudes.physical.strength))) + Math.round(parseFloat(Choose(data.gaptitudes_v.hunting.skill, data.gaptitudes.hunting.skill))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming))) + Math.round(parseFloat(Choose(data.gaptitudes_v.ems.ems, data.gaptitudes.ems.ems))) + Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino))) + Math.round(parseFloat(Choose(data.gaptitudes_v.business.business, data.gaptitudes.business.business)));
+    if (levelFromExp(combined)>=1513) {
+        document.getElementById('bar_uncompleted_trucking').style.width = '100%';
+        document.getElementById('bar_uncompleted_trucking').style.background = color;
+        document.getElementById('bar_two_trucking').style.background = invisible;
+    } else {
+        document.getElementById('bar_uncompleted_trucking').style.width = percentage(combined) + '%';
+    }
 }
 
 Start();
