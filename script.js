@@ -112,17 +112,17 @@ function getStats(info, save){
     save += '<div class="progress">';
     save += '<div class="bar" id="bar_hunger"></div>';
     save += '<div class="bar-two" style="background-color: #8b46004d"></div>';
-    save += '<div id="percent_stats"><div id="percent_skillstwo">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div ></div >';
+    save += '<div id="percent_stats"><div id="percent_statstwo">Hunger: ' + parseFloat(info.data.hunger).toFixed(2) + '%</div ></div >';
     save += '</div>';
     save += '<div class="progress">';
     save += '<div class="bar" id="bar_thirst"></div>';
     save += '<div class="bar-two" style="background-color: #002eac4d"></div>';
-    save += '<div id="percent_stats"><div id="percent_skillstwo">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div ></div >';
+    save += '<div id="percent_stats"><div id="percent_statstwo">Thirst: ' + parseFloat(info.data.thirst).toFixed(2) + '%</div ></div >';
     save += '</div>';
     save += '<div class="progress">';
     save += '<div class="bar" id="bar_health"></div>';
     save += '<div class="bar-two" style="background-color: #0087024d"></div>';
-    save += '<div id="percent_stats"><div id="percent_skillstwo">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div ></div >';
+    save += '<div id="percent_stats"><div id="percent_statstwo">Health: ' + parseFloat((info.data.health-100)).toFixed(2) + '%</div ></div >';
     save += '</div></div>';
     return(save);
 }
