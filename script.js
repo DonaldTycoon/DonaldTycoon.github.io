@@ -313,139 +313,141 @@ function timeConverter(UNIX_timestamp){
 }
 
 function design(info) {
+    var color = 'rgb(189, 172, 0)';
+    var invisible = '#FFFFFF00';
     document.getElementById('bar_health').style.width = (info.data.health-100) + '%';
     document.getElementById('bar_thirst').style.width = info.data.thirst + '%';
     document.getElementById('bar_hunger').style.width = info.data.hunger + '%';
     if (levelFromExp(Math.round(parseFloat(info.data.gaptitudes_v.business.business, info.data.gaptitudes.business.business)))>=100) {
         document.getElementById('bar_uncompleted_business').style.width = '100%';
-        document.getElementById('bar_uncompleted_business').style.background = '#e4c000';
-        document.getElementById('bar_two_business').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_business').style.background = color;
+        document.getElementById('bar_two_business').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_business').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.business.business, info.data.gaptitudes.business.business)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.casino.casino, info.data.gaptitudes.casino.casino))))>=100) {
         document.getElementById('bar_uncompleted_casino').style.width = '100%';
-        document.getElementById('bar_uncompleted_casino').style.background = '#e4c000';
-        document.getElementById('bar_two_casino').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_casino').style.background = color;
+        document.getElementById('bar_two_casino').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_casino').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.casino.casino, info.data.gaptitudes.casino.casino)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.ems.ems, info.data.gaptitudes.ems.ems))))>=100) {
         document.getElementById('bar_uncompleted_ems').style.width = '100%';
-        document.getElementById('bar_uncompleted_ems').style.background = '#e4c000';
-        document.getElementById('bar_two_ems').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_ems').style.background = color;
+        document.getElementById('bar_two_ems').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_ems').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.ems.ems, info.data.gaptitudes.ems.ems)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.farming, info.data.gaptitudes.farming.farming))))>=100) {
         document.getElementById('bar_uncompleted_farming').style.width = '100%';
-        document.getElementById('bar_uncompleted_farming').style.background = '#e4c000';
-        document.getElementById('bar_two_farming').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_farming').style.background = color;
+        document.getElementById('bar_two_farming').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_farming').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.farming, info.data.gaptitudes.farming.farming)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.fishing, info.data.gaptitudes.farming.fishing))))>=100) {
         document.getElementById('bar_uncompleted_fishing').style.width = '100%';
-        document.getElementById('bar_uncompleted_fishing').style.background = '#e4c000';
-        document.getElementById('bar_two_fishing').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_fishing').style.background = color;
+        document.getElementById('bar_two_fishing').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_fishing').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.fishing, info.data.gaptitudes.farming.fishing)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining))))>=50) {
         document.getElementById('bar_uncompleted_mining').style.width = '100%';
-        document.getElementById('bar_uncompleted_mining').style.background = '#e4c000';
-        document.getElementById('bar_two_mining').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_mining').style.background = color;
+        document.getElementById('bar_two_mining').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_mining').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining))))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.hunting.skill, info.data.gaptitudes.hunting.skill))))>=100) {
         document.getElementById('bar_uncompleted_hunting').style.width = '100%';
-        document.getElementById('bar_uncompleted_hunting').style.background = '#e4c000';
-            document.getElementById('bar_two_hunting').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_hunting').style.background = color;
+            document.getElementById('bar_two_hunting').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_hunting').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.hunting.skill, info.data.gaptitudes.hunting.skill)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength))))>=30) {
         document.getElementById('bar_uncompleted_strenth').style.width = '100%';
-        document.getElementById('bar_uncompleted_strenth').style.background = '#e4c000';
-        document.getElementById('bar_two_strenth').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_strenth').style.background = color;
+        document.getElementById('bar_two_strenth').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_strenth').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength))))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.cargos, info.data.gaptitudes.piloting.cargos))))>=100) {
         document.getElementById('bar_uncompleted_cargos').style.width = '100%';
-        document.getElementById('bar_uncompleted_cargos').style.background = '#e4c000';
-        document.getElementById('bar_two_cargos').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_cargos').style.background = color;
+        document.getElementById('bar_two_cargos').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_cargos').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.cargos, info.data.gaptitudes.piloting.cargos)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.heli, info.data.gaptitudes.piloting.heli))))>=100) {
         document.getElementById('bar_uncompleted_heli').style.width = '100%';
-        document.getElementById('bar_uncompleted_heli').style.background = '#e4c000';
-        document.getElementById('bar_two_heli').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_heli').style.background = color;
+        document.getElementById('bar_two_heli').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_heli').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.heli, info.data.gaptitudes.piloting.heli)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.piloting, info.data.gaptitudes.piloting.piloting))))>=100) {
         document.getElementById('bar_uncompleted_piloting').style.width = '100%';
-        document.getElementById('bar_uncompleted_piloting').style.background = '#e4c000';
-        document.getElementById('bar_two_piloting').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_piloting').style.background = color;
+        document.getElementById('bar_two_piloting').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_piloting').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.piloting, info.data.gaptitudes.piloting.piloting)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.player, info.data.gaptitudes.player.player))))>=100) {
         document.getElementById('bar_uncompleted_player').style.width = '100%';
-        document.getElementById('bar_uncompleted_player').style.background = '#e4c000';
-        document.getElementById('bar_two_player').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_player').style.background = color;
+        document.getElementById('bar_two_player').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_player').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.player, info.data.gaptitudes.player.player)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.racing, info.data.gaptitudes.player.racing))))>=100) {
         document.getElementById('bar_uncompleted_racing').style.width = '100%';
-        document.getElementById('bar_uncompleted_racing').style.background = '#e4c000';
-        document.getElementById('bar_two_racing').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_racing').style.background = color;
+        document.getElementById('bar_two_racing').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_racing').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.player.racing, info.data.gaptitudes.player.racing)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.bus, info.data.gaptitudes.train.bus))))>=100) {
         document.getElementById('bar_uncompleted_bus').style.width = '100%';
-        document.getElementById('bar_uncompleted_bus').style.background = '#e4c000';
-        document.getElementById('bar_two_bus').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_bus').style.background = color;
+        document.getElementById('bar_two_bus').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_bus').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.bus, info.data.gaptitudes.train.bus)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.train, info.data.gaptitudes.train.train))))>=100) {
         document.getElementById('bar_uncompleted_train').style.width = '100%';
-        document.getElementById('bar_uncompleted_train').style.background = '#e4c000';
-        document.getElementById('bar_two_train').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_train').style.background = color;
+        document.getElementById('bar_two_train').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_train').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.train.train, info.data.gaptitudes.train.train)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.garbage, info.data.gaptitudes.trucking.garbage))))>=100) {
         document.getElementById('bar_uncompleted_garbage').style.width = '100%';
-        document.getElementById('bar_uncompleted_garbage').style.background = '#e4c000';
-        document.getElementById('bar_two_garbage').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_garbage').style.background = color;
+        document.getElementById('bar_two_garbage').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_garbage').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.garbage, info.data.gaptitudes.trucking.garbage)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.mechanic, info.data.gaptitudes.trucking.mechanic))))>=100) {
         document.getElementById('bar_uncompleted_mechanic').style.width = '100%';
-        document.getElementById('bar_uncompleted_mechanic').style.background = '#e4c000';
-        document.getElementById('bar_two_mechanic').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_mechanic').style.background = color;
+        document.getElementById('bar_two_mechanic').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_mechanic').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.mechanic, info.data.gaptitudes.trucking.mechanic)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.postop, info.data.gaptitudes.trucking.postop))))>=100) {
         document.getElementById('bar_uncompleted_postop').style.width = '100%';
-        document.getElementById('bar_uncompleted_postop').style.background = '#e4c000';
-        document.getElementById('bar_two_postop').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_postop').style.background = color;
+        document.getElementById('bar_two_postop').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_postop').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.postop, info.data.gaptitudes.trucking.postop)))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking))))>=100) {
         document.getElementById('bar_uncompleted_trucking').style.width = '100%';
-        document.getElementById('bar_uncompleted_trucking').style.background = '#e4c000';
-        document.getElementById('bar_two_trucking').style.background = '#FFFFFF00';
+        document.getElementById('bar_uncompleted_trucking').style.background = color;
+        document.getElementById('bar_two_trucking').style.background = invisible;
     } else {
         document.getElementById('bar_uncompleted_trucking').style.width = percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.trucking.trucking, info.data.gaptitudes.trucking.trucking)))) + '%';
     }

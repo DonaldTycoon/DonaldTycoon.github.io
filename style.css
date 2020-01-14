@@ -154,13 +154,16 @@ body {
 #percent_stats{
     position:absolute;
     display:inline-block;
-    top:1.2px;
+    top: -15%;
     margin: .5%;
     left:50%;
 }
 #percent_statstwo{
     position:relative;
     left:-50%;
+    text-shadow: 1px 1px #000000;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 #percent_skills {
