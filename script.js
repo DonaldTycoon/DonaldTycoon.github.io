@@ -358,7 +358,7 @@ function design(info) {
         document.getElementById('bar_uncompleted_mining').style.background = '#e4c000';
         document.getElementById('bar_two_mining').style.background = '#FFFFFF00';
     } else {
-        document.getElementById('bar_uncompleted_mining').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining)))))/2 + '%';
+        document.getElementById('bar_uncompleted_mining').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.farming.mining, info.data.gaptitudes.farming.mining))))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.hunting.skill, info.data.gaptitudes.hunting.skill))))>=100) {
         document.getElementById('bar_uncompleted_hunting').style.width = '100%';
@@ -372,7 +372,7 @@ function design(info) {
         document.getElementById('bar_uncompleted_strenth').style.background = '#e4c000';
         document.getElementById('bar_two_strenth').style.background = '#FFFFFF00';
     } else {
-        document.getElementById('bar_uncompleted_strenth').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength)))))/3.3 + '%';
+        document.getElementById('bar_uncompleted_strenth').style.width = (percentage(Math.round(parseFloat(Choose(info.data.gaptitudes_v.physical.strength, info.data.gaptitudes.physical.strength))))) + '%';
     }
     if (levelFromExp(Math.round(parseFloat(Choose(info.data.gaptitudes_v.piloting.cargos, info.data.gaptitudes.piloting.cargos))))>=100) {
         document.getElementById('bar_uncompleted_cargos').style.width = '100%';
