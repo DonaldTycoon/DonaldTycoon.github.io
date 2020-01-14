@@ -125,7 +125,8 @@ body {
 #bar_uncompleted_garbage,
 #bar_uncompleted_mechanic,
 #bar_uncompleted_postop,
-#bar_uncompleted_trucking{
+#bar_uncompleted_trucking,
+#bar_uncompleted_combined{
     background-color:#0063CA;
 }
 
@@ -147,7 +148,8 @@ body {
 #bar_two_garbage,
 #bar_two_mechanic,
 #bar_two_postop,
-#bar_two_trucking{
+#bar_two_trucking,
+#bar_two_combined{
     background-color: #0063CA4d;
 }
 
