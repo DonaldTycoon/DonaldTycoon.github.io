@@ -19,7 +19,7 @@ function getUrlParam(parameter, defaultvalue){
 function Start() {
     var value = getUrlParam('id','2');
     data = [];
-    for (i = 0 ;i<=1000;i++) {
+    for (i = 0 ;i<=2000;i++) {
         if (i>0) {
             data.push(data[i-1]+(i*5));
         } else {
@@ -140,7 +140,7 @@ function getSkills(data, save){
     save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_casino"></div>';
     save += '<div class="bar-two" id="bar_two_casino"></div>';
-    save += '<div id="percent_skills"><div id="percent_skillstwo">Casino | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino))) + ' EXP)</i></div ></div >';
+    save += '<div id="percent_skills"><div id="percent_skillstwo">Gambling | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino))) + ' EXP)</i></div ></div >';
     save += '</div>';
 
     save += '<div id="skill-title">EMS Level:</div>';
@@ -152,11 +152,6 @@ function getSkills(data, save){
 
     save += '<div id="skill-title">Gathering Industries:</div>';
     save += '<div class="progress-two">';
-    save += '<div class="bar" id="bar_uncompleted_mining"></div>';
-    save += '<div class="bar-two" id="bar_two_mining"></div>';
-    save += '<div id="percent_skills"><div id="percent_skillstwo">Mining | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining)))) + '  / 50 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining))) + ' EXP)</i></div ></div >';
-    save += '</div>';
-    save += '<div class="progress-two">';
     save += '<div class="bar" id="bar_uncompleted_farming"></div>';
     save += '<div class="bar-two" id="bar_two_farming"></div>';
     save += '<div id="percent_skills"><div id="percent_skillstwo">Farming | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming))) + ' EXP)</i></div ></div >';
@@ -165,6 +160,11 @@ function getSkills(data, save){
     save += '<div class="bar" id="bar_uncompleted_fishing"></div>';
     save += '<div class="bar-two" id="bar_two_fishing"></div>';
     save += '<div id="percent_skills"><div id="percent_skillstwo">Fishing | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing))) + ' EXP)</i></div ></div >';
+    save += '</div>';
+    save += '<div class="progress-two">';
+    save += '<div class="bar" id="bar_uncompleted_mining"></div>';
+    save += '<div class="bar-two" id="bar_two_mining"></div>';
+    save += '<div id="percent_skills"><div id="percent_skillstwo">Mining | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining)))) + '  / 50 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining))) + ' EXP)</i></div ></div >';
     save += '</div>';
 
     save += '<div id="skill-title">Hunting:</div>';
@@ -244,6 +244,13 @@ function getSkills(data, save){
     save += '<div id="percent_skills"><div id="percent_skillstwo">Trucking | Level ' + levelFromExp(Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking)))) + '  / 100 <i>(' + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + ' EXP)</i></div ></div >';
     save += '</div></div>';
 
+    save += '<div id="skill-title">Total:</div>';
+    save += '<div class="progress-two">';
+    save += '<div class="bar" id="bar_uncompleted_trucking"></div>';
+    save += '<div class="bar-two" id="bar_two_trucking"></div>';
+    var combined = Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.trucking, data.gaptitudes.trucking.trucking))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.postop, data.gaptitudes.trucking.postop))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.mechanic, data.gaptitudes.trucking.mechanic))) + Math.round(parseFloat(Choose(data.gaptitudes_v.trucking.garbage, data.gaptitudes.trucking.garbage))) + Math.round(parseFloat(Choose(data.gaptitudes_v.train.train, data.gaptitudes.train.train))) + Math.round(parseFloat(Choose(data.gaptitudes_v.train.bus,data.gaptitudes.train.bus))) + Math.round(parseFloat(Choose(data.gaptitudes_v.player.racing, data.gaptitudes.player.racing))) + Math.round(parseFloat(Choose(data.gaptitudes_v.player.player, data.gaptitudes.player.player))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.piloting, data.gaptitudes.piloting.piloting))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.heli, data.gaptitudes.piloting.heli))) + Math.round(parseFloat(Choose(data.gaptitudes_v.piloting.cargos, data.gaptitudes.piloting.cargos))) + Math.round(parseFloat(Choose(data.gaptitudes_v.physical.strength, data.gaptitudes.physical.strength))) + Math.round(parseFloat(Choose(data.gaptitudes_v.hunting.skill, data.gaptitudes.hunting.skill))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.mining, data.gaptitudes.farming.mining))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.fishing, data.gaptitudes.farming.fishing))) + Math.round(parseFloat(Choose(data.gaptitudes_v.farming.farming, data.gaptitudes.farming.farming))) + Math.round(parseFloat(Choose(data.gaptitudes_v.ems.ems, data.gaptitudes.ems.ems))) + Math.round(parseFloat(Choose(data.gaptitudes_v.casino.casino, data.gaptitudes.casino.casino))) + Math.round(parseFloat(Choose(data.gaptitudes_v.business.business, data.gaptitudes.business.business)));
+    save += '<div id="percent_skills"><div id="percent_skillstwo">Combined | Level ' + levelFromExp(combined) + '  / 1513 <i>(' + combined + ' EXP)</i></div ></div >';
+    save += '</div></div>';
 
     return(save);
 }
