@@ -38,28 +38,28 @@ function Data(value) {
       if (value === null || value == "" || value <= 0) {
             value = 1;
       }
-      var fetchUrl = 'http://na.tycoon.community:30120/status/data/' + value;
+      var fetchUrl = 'https://na.tycoon.community:30120/status/data/' + value;
       fetch(fetchUrl)
       fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
             toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.gaptitudes_v, JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.licenses, JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.groups);
       })
-      .catch(function(err) {  
-            var fetchUrl = 'http://api.tycoon.community:30120/status/data/' + value;
+      .catch(function(err) {
+            var fetchUrl = 'https://api.tycoon.community:30120/status/data/' + value;
             fetch(fetchUrl)
             fetch(fetchUrl).then(function(res){ return res.text()}).then(function(html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
             toHTML(JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.gaptitudes_v, JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.licenses, JSON.parse(doc.body.innerHTML.replace(/<\/?[^>]+>/gi, '')).data.groups);
             })
-            .catch(function(err) {  
+            .catch(function(err) {
                   var save = document.getElementById('data').innerHTML;
                   save += '{"strength":"' + "ERROR" + '","cooldown":"'+ "ERROR" +'","inCompany":"' + "ERROR" + '"}';
                   document.getElementById('data').innerHTML = save;
             });
       });
-      
+
 }
 
 function toHTML(skills, licenses, groups){
